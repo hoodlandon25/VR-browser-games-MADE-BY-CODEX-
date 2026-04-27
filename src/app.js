@@ -15,7 +15,7 @@ const overlay = document.getElementById("boot-overlay");
 const statusCopy = document.getElementById("status-copy");
 const mp3Entity = document.getElementById("mp3-player");
 const audio = new AudioManager();
-const pointerTimers = new Map();
+const touchCooldowns = new Map();
 
 AFRAME.registerComponent("mp3-player", {
   init() {
@@ -152,27 +152,22 @@ function animate() {
     if (!handState) {
       return;
     }
-    const intersections = handState.ray.components.raycaster?.intersections || [];
     const key = handState.data.hand;
-    const current = pointerTimers.get(key) || { target: null, started: 0 };
-    const activeTarget = state.handStates[key] === "point" && intersections[0]?.object?.el?.classList?.contains("ui-hit")
-      ? intersections[0]
+    const surface = mp3Entity.components["ui-surface"];
+    const touchObject = handState.touchTip?.object3D;
+    const touchPoint = touchObject && state.handStates[key] === "point"
+      ? surface?.getTouchPoint(touchObject.getWorldPosition(new THREE.Vector3()))
       : null;
 
-    if (!activeTarget) {
-      pointerTimers.set(key, { target: null, started: 0 });
+    if (!touchPoint) {
+      touchCooldowns.set(key, 0);
       return;
     }
 
-    const targetUuid = activeTarget.object.uuid;
-    if (current.target !== targetUuid) {
-      pointerTimers.set(key, { target: targetUuid, started: performance.now() });
-      return;
-    }
-
-    if (performance.now() - current.started > 420) {
-      publish("ui:pointer", { intersection: activeTarget, hand: key });
-      pointerTimers.set(key, { target: null, started: 0 });
+    const lastTouch = touchCooldowns.get(key) || 0;
+    if (performance.now() - lastTouch > 220) {
+      publish("ui:touch", { hand: key, x: touchPoint.x, y: touchPoint.y });
+      touchCooldowns.set(key, performance.now());
     }
   });
 

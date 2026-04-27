@@ -10,6 +10,7 @@ AFRAME.registerComponent("strict-hand-state", {
     this.triggerDown = false;
     this.ray = document.createElement("a-entity");
     this.pointerCore = document.createElement("a-sphere");
+    this.touchTip = document.createElement("a-sphere");
     this.grabber = document.createElement("a-sphere");
     this.label = document.createElement("a-text");
 
@@ -21,6 +22,14 @@ AFRAME.registerComponent("strict-hand-state", {
     this.pointerCore.setAttribute("color", "#d7d2b1");
     this.pointerCore.setAttribute("position", "0 0 0");
     this.el.appendChild(this.pointerCore);
+
+    this.touchTip.setAttribute("radius", 0.012);
+    this.touchTip.setAttribute("segments-width", 5);
+    this.touchTip.setAttribute("segments-height", 5);
+    this.touchTip.setAttribute("material", "color: #d8f0a8; emissive: #a3cf4a; emissiveIntensity: 0.45");
+    this.touchTip.setAttribute("position", "0 0 -0.14");
+    this.touchTip.setAttribute("visible", "false");
+    this.el.appendChild(this.touchTip);
 
     this.grabber.setAttribute("radius", 0.055);
     this.grabber.setAttribute("segments-width", 6);
@@ -70,7 +79,14 @@ AFRAME.registerComponent("strict-hand-state", {
   syncState() {
     const nextState = this.gripDown && this.triggerDown ? "fist" : this.gripDown ? "point" : "open";
     state.handStates[this.data.hand] = nextState;
-    publish("hand:state", { hand: this.data.hand, state: nextState, grabber: this.grabber, ray: this.ray, entity: this.el });
+    publish("hand:state", {
+      hand: this.data.hand,
+      state: nextState,
+      grabber: this.grabber,
+      ray: this.ray,
+      touchTip: this.touchTip,
+      entity: this.el
+    });
 
     this.ray.setAttribute("visible", nextState === "point");
     this.ray.setAttribute("raycaster", "objects: .ui-hit; far: 0.8");
@@ -78,6 +94,7 @@ AFRAME.registerComponent("strict-hand-state", {
     this.pointerCore.setAttribute("scale", nextState === "fist" ? "0.7 0.7 0.7" : nextState === "point" ? "0.5 0.5 2.2" : "1 1 1");
     this.pointerCore.setAttribute("position", nextState === "point" ? "0 0 -0.06" : "0 0 0");
     this.pointerCore.setAttribute("color", nextState === "fist" ? "#97b75c" : "#d7d2b1");
+    this.touchTip.setAttribute("visible", nextState === "point");
     this.label.setAttribute("value", nextState === "point" ? "POINT" : nextState === "fist" ? "GRAB" : "");
   }
 });

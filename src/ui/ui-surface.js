@@ -9,6 +9,8 @@ const VISIBLE_SONG_ROWS = 5;
 
 AFRAME.registerComponent("ui-surface", {
   init() {
+    this.screenMesh = null;
+    this.touchProbe = new THREE.Vector3();
     this.canvas = document.createElement("canvas");
     this.canvas.width = 256;
     this.canvas.height = 256;
@@ -26,12 +28,15 @@ AFRAME.registerComponent("ui-surface", {
     this.el.appendChild(this.screen);
 
     this.screen.addEventListener("loaded", () => {
-      this.screen.getObject3D("mesh").material.map = this.texture;
-      this.screen.getObject3D("mesh").material.needsUpdate = true;
+      this.screenMesh = this.screen.getObject3D("mesh");
+      this.screenMesh.material.map = this.texture;
+      this.screenMesh.material.needsUpdate = true;
+      this.applyScreenMaterial();
     });
 
     this.handlePointer = this.handlePointer.bind(this);
     subscribe("ui:pointer", this.handlePointer);
+    subscribe("ui:touch", this.handlePointer);
     subscribe("playlist:changed", () => this.draw());
     subscribe("audio:analysis", () => this.draw());
 
@@ -40,22 +45,59 @@ AFRAME.registerComponent("ui-surface", {
 
   setVisible(visible) {
     state.uiVisible = visible;
-    this.screen.setAttribute("material", `shader: flat; transparent: true; opacity: ${visible ? 1 : 0.42}; side: double`);
+    this.applyScreenMaterial();
     this.draw();
   },
 
-  handlePointer({ intersection, hand }) {
+  applyScreenMaterial() {
+    if (!this.screenMesh) {
+      return;
+    }
+    this.screenMesh.material.transparent = true;
+    this.screenMesh.material.opacity = state.uiVisible ? 1 : 0.42;
+    this.screenMesh.material.side = THREE.DoubleSide;
+    this.screenMesh.material.color.set(state.uiVisible ? "#ffffff" : "#d0d5b8");
+    this.screenMesh.material.needsUpdate = true;
+  },
+
+  handlePointer({ intersection, hand, x, y }) {
     if (!state.uiVisible || state.handStates[hand] !== "point") {
       return;
     }
 
-    const uv = intersection.uv;
+    if (typeof x === "number" && typeof y === "number") {
+      this.activateAt(x, y);
+      return;
+    }
+
+    const uv = intersection?.uv;
     if (!uv) {
       return;
     }
-    const x = uv.x * this.canvas.width;
-    const y = (1 - uv.y) * this.canvas.height;
-    this.activateAt(x, y);
+    this.activateAt(uv.x * this.canvas.width, (1 - uv.y) * this.canvas.height);
+  },
+
+  getTouchPoint(worldPoint) {
+    if (!this.screenMesh || !state.uiVisible) {
+      return null;
+    }
+
+    this.touchProbe.copy(worldPoint);
+    this.screen.object3D.worldToLocal(this.touchProbe);
+
+    const halfWidth = 0.14;
+    const halfHeight = 0.14;
+    if (Math.abs(this.touchProbe.z) > 0.035) {
+      return null;
+    }
+    if (this.touchProbe.x < -halfWidth || this.touchProbe.x > halfWidth || this.touchProbe.y < -halfHeight || this.touchProbe.y > halfHeight) {
+      return null;
+    }
+
+    return {
+      x: ((this.touchProbe.x + halfWidth) / (halfWidth * 2)) * this.canvas.width,
+      y: ((halfHeight - this.touchProbe.y) / (halfHeight * 2)) * this.canvas.height
+    };
   },
 
   activateAt(x, y) {
@@ -113,7 +155,11 @@ AFRAME.registerComponent("ui-surface", {
   draw() {
     const ctx = this.ctx;
     const analysis = state.analysis;
-    ctx.fillStyle = COLORS.uiBg;
+    const screenGradient = ctx.createLinearGradient(0, 0, 0, 256);
+    screenGradient.addColorStop(0, "#1b2217");
+    screenGradient.addColorStop(0.45, COLORS.uiBg);
+    screenGradient.addColorStop(1, "#091008");
+    ctx.fillStyle = screenGradient;
     ctx.fillRect(0, 0, 256, 256);
 
     ctx.fillStyle = state.hiddenMode ? "rgba(140,20,18,0.18)" : "rgba(190,197,140,0.06)";
@@ -121,11 +167,17 @@ AFRAME.registerComponent("ui-surface", {
       ctx.fillRect(x, 0, 2, 256);
     }
 
+    ctx.fillStyle = "rgba(10, 14, 10, 0.45)";
+    ctx.fillRect(10, 10, 236, 236);
     ctx.strokeStyle = state.hiddenMode ? COLORS.uiDanger : COLORS.uiAccent;
     ctx.strokeRect(6, 6, 244, 244);
+    ctx.strokeStyle = "rgba(245, 247, 219, 0.15)";
+    ctx.strokeRect(10, 10, 236, 236);
     ctx.font = "16px monospace";
     ctx.fillStyle = COLORS.uiText;
     ctx.fillText("MZ-01 WALKMAN", 18, 28);
+    ctx.fillStyle = "rgba(255,255,255,0.08)";
+    ctx.fillRect(18, 34, 220, 2);
 
     if (state.hiddenMode && Math.random() < 0.12) {
       ctx.fillStyle = COLORS.uiDanger;
@@ -189,6 +241,7 @@ AFRAME.registerComponent("ui-surface", {
     }
 
     this.drawVisualizer(146, 194, 92, 38, analysis);
+    this.drawTouchHint();
     ctx.fillStyle = COLORS.uiText;
     ctx.font = "12px monospace";
     ctx.fillText(state.isPlaying ? "PLAYING" : "IDLE", 148, 188);
@@ -207,7 +260,10 @@ AFRAME.registerComponent("ui-surface", {
   },
 
   drawButton(x, y, w, h, label) {
-    this.ctx.fillStyle = "rgba(236, 230, 188, 0.06)";
+    const buttonGradient = this.ctx.createLinearGradient(0, y, 0, y + h);
+    buttonGradient.addColorStop(0, "rgba(236, 230, 188, 0.14)");
+    buttonGradient.addColorStop(1, "rgba(70, 88, 44, 0.12)");
+    this.ctx.fillStyle = buttonGradient;
     this.ctx.fillRect(x, y, w, h);
     this.ctx.strokeStyle = "rgba(161,191,95,0.55)";
     this.ctx.strokeRect(x, y, w, h);
@@ -228,5 +284,19 @@ AFRAME.registerComponent("ui-surface", {
       this.ctx.fillStyle = state.hiddenMode ? "#d77975" : "#a1bf5f";
       this.ctx.fillRect(x + i * 11, y + h - barHeight, 8, barHeight);
     }
+    this.ctx.strokeStyle = "rgba(255,255,255,0.12)";
+    this.ctx.strokeRect(x, y, w, h);
+  },
+
+  drawTouchHint() {
+    if (!state.uiVisible) {
+      return;
+    }
+    this.ctx.fillStyle = "rgba(210, 229, 164, 0.16)";
+    this.ctx.fillRect(18, 42, 112, 14);
+    this.ctx.fillStyle = "#d6e5b4";
+    this.ctx.font = "10px monospace";
+    this.ctx.fillText("TOUCH TIP TO SCREEN", 22, 52);
+    this.ctx.font = "16px monospace";
   }
 });
