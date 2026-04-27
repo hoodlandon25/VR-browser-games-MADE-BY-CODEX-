@@ -9,6 +9,7 @@ export const state = {
   songs: [],
   currentSongIndex: 0,
   songScrollOffset: 0,
+  uiSelection: 0,
   uiRoute: ["menu"],
   uiVisible: false,
   hiddenMode: false,

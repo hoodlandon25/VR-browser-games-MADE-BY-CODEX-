@@ -14,8 +14,9 @@ const uploadInput = document.getElementById("song-upload");
 const overlay = document.getElementById("boot-overlay");
 const statusCopy = document.getElementById("status-copy");
 const mp3Entity = document.getElementById("mp3-player");
+const rightHand = document.getElementById("right-hand");
 const audio = new AudioManager();
-const touchCooldowns = new Map();
+let navReady = true;
 
 AFRAME.registerComponent("mp3-player", {
   init() {
@@ -144,40 +145,46 @@ function registerSceneLifecycle() {
   });
 }
 
-function animate() {
-  audio.updateAnalysis();
+function mp3HeldInRightHand() {
+  return mp3Entity.components["mp3-player"]?.grabbedBy === "right";
+}
 
-  document.querySelectorAll("[strict-hand-state]").forEach((handEl) => {
-    const handState = handEl.components["strict-hand-state"];
-    if (!handState) {
-      return;
-    }
-    const key = handState.data.hand;
-    const intersections = handState.ray.components.raycaster?.intersections || [];
-    const activeHit = state.handStates[key] === "point" && intersections[0]?.object?.el?.classList?.contains("ui-hit")
-      ? intersections[0]
-      : null;
-    const touchObject = handState.touchTip?.object3D;
-    const touchPoint = activeHit?.uv && touchObject
-      ? {
-          x: activeHit.uv.x * 256,
-          y: (1 - activeHit.uv.y) * 256,
-          distance: activeHit.point.distanceTo(touchObject.getWorldPosition(new THREE.Vector3()))
-        }
-      : null;
-
-    if (!touchPoint || touchPoint.distance > 0.06) {
-      touchCooldowns.set(key, 0);
+function registerUiControllerInput() {
+  rightHand.addEventListener("thumbstickmoved", (event) => {
+    if (!mp3HeldInRightHand()) {
+      navReady = true;
       return;
     }
 
-    const lastTouch = touchCooldowns.get(key) || 0;
-    if (performance.now() - lastTouch > 220) {
-      publish("ui:touch", { hand: key, x: touchPoint.x, y: touchPoint.y });
-      touchCooldowns.set(key, performance.now());
+    const y = event.detail?.y || 0;
+    if (Math.abs(y) < 0.6) {
+      navReady = true;
+      return;
+    }
+
+    if (!navReady) {
+      return;
+    }
+
+    publish("ui:move", { delta: y > 0 ? 1 : -1 });
+    navReady = false;
+  });
+
+  rightHand.addEventListener("abuttondown", () => {
+    if (mp3HeldInRightHand()) {
+      publish("ui:confirm");
     }
   });
 
+  rightHand.addEventListener("bbuttondown", () => {
+    if (mp3HeldInRightHand()) {
+      publish("ui:back");
+    }
+  });
+}
+
+function animate() {
+  audio.updateAnalysis();
   requestAnimationFrame(animate);
 }
 
@@ -190,4 +197,5 @@ uploadInput.addEventListener("change", (event) => {
 initUiActions();
 wireUiSurface();
 registerSceneLifecycle();
+registerUiControllerInput();
 animate();
