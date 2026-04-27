@@ -20,11 +20,11 @@ const pointerTimers = new Map();
 AFRAME.registerComponent("mp3-player", {
   init() {
     this.grabbedBy = null;
-    this.returnAnchor = new THREE.Vector3(0.72, 1.08, -1.42);
+    this.returnAnchor = new THREE.Vector3(0.18, 1.12, 1.56);
     this.target = new THREE.Vector3();
     this.temp = new THREE.Vector3();
     this.screenOffset = new THREE.Vector3(0.18, -0.1, -0.42);
-    this.returnRotation = new THREE.Euler(0.18, -0.32, 0);
+    this.returnRotation = new THREE.Euler(0.1, -0.08, 0);
     this.headTarget = new THREE.Vector3();
 
     const body = new THREE.Mesh(
