@@ -1,4 +1,5 @@
-import { AUDIO_ANALYSIS, SONGS } from "../config.js";
+import { AUDIO_ANALYSIS } from "../config.js";
+import { loadSongLibrary } from "./library-loader.js";
 import { publish, state } from "../state.js";
 
 export class AudioManager {
@@ -10,7 +11,6 @@ export class AudioManager {
     this.data = null;
     this.lastBeatAt = 0;
     this.pendingUploadUrl = null;
-    state.songs = [...SONGS];
   }
 
   async init() {
@@ -49,6 +49,15 @@ export class AudioManager {
       state.isPlaying = false;
       publish("audio:ended");
     });
+
+    if (!state.songs.length) {
+      try {
+        state.songs = await loadSongLibrary();
+      } catch {
+        state.songs = [];
+      }
+      publish("playlist:changed", { index: state.currentSongIndex, song: state.songs[0] || null });
+    }
   }
 
   async ensureResumed() {
@@ -100,7 +109,7 @@ export class AudioManager {
     }
     this.pendingUploadUrl = URL.createObjectURL(file);
     const title = file.name.replace(/\.[^/.]+$/, "");
-    state.songs.push({ title, src: this.pendingUploadUrl, uploaded: true });
+    state.songs.push({ title, album: "Uploads", src: this.pendingUploadUrl, uploaded: true });
     publish("playlist:changed", { index: state.songs.length - 1, song: state.songs.at(-1) });
   }
 

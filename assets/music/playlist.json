@@ -1,0 +1,789 @@
+{
+  "songs": [
+    {
+      "title": "(VERYRAREBOYZ) (feat. $ki Mask The Slump God and Drugz)",
+      "album": "[2014-05-11] ICE HOTEL EP",
+      "src": "./assets/music/%5B2014-05-11%5D%20ICE%20HOTEL%20EP/05.%20%28VERYRAREBOYZ%29%20%28feat.%20%24ki%20Mask%20The%20Slump%20God%20and%20Drugz%29/%28VERYRAREBOYZ%29%20%28feat.%20%24ki%20Mask%20The%20Slump%20God%20and%20Drugz%29.mp3"
+    },
+    {
+      "title": "0C3AN _clip_",
+      "album": "[2014-05-11] ICE HOTEL EP",
+      "src": "./assets/music/%5B2014-05-11%5D%20ICE%20HOTEL%20EP/03.%200C3AN%20_clip_/0C3AN%20_clip_.mp3"
+    },
+    {
+      "title": "Blood Stains (feat. $ki Mask The Slump God and Drugz)",
+      "album": "[2014-05-11] ICE HOTEL EP",
+      "src": "./assets/music/%5B2014-05-11%5D%20ICE%20HOTEL%20EP/04.%20Blood%20Stains%20%28feat.%20%24ki%20Mask%20The%20Slump%20God%20and%20Drugz%29/Blood%20Stains%20%28feat.%20%24ki%20Mask%20The%20Slump%20God%20and%20Drugz%29.mp3"
+    },
+    {
+      "title": "FUCK V2 (feat. $ki Mask The Slump God)",
+      "album": "[2014-05-11] ICE HOTEL EP",
+      "src": "./assets/music/%5B2014-05-11%5D%20ICE%20HOTEL%20EP/07.%20FUCK%20V2%20%28feat.%20%24ki%20Mask%20The%20Slump%20God%29/FUCK%20V2%20%28feat.%20%24ki%20Mask%20The%20Slump%20God%29.mp3"
+    },
+    {
+      "title": "ICE HOTEL (intro) (feat. SZA)",
+      "album": "[2014-05-11] ICE HOTEL EP",
+      "src": "./assets/music/%5B2014-05-11%5D%20ICE%20HOTEL%20EP/01.%20ICE%20HOTEL%20%28intro%29%20%28feat.%20SZA%29/ICE%20HOTEL%20%28intro%29%20%28feat.%20SZA%29.mp3"
+    },
+    {
+      "title": "sounds of the melting pot",
+      "album": "[2014-05-11] ICE HOTEL EP",
+      "src": "./assets/music/%5B2014-05-11%5D%20ICE%20HOTEL%20EP/06.%20sounds%20of%20the%20melting%20pot/sounds%20of%20the%20melting%20pot.mp3"
+    },
+    {
+      "title": "FUCKABITCHFACE",
+      "album": "[2014-11-21] The Fall",
+      "src": "./assets/music/%5B2014-11-21%5D%20The%20Fall/05.%20FUCKABITCHFACE/FUCKABITCHFACE.mp3"
+    },
+    {
+      "title": "ghost",
+      "album": "[2014-11-21] The Fall",
+      "src": "./assets/music/%5B2014-11-21%5D%20The%20Fall/02.%20ghost/ghost.mp3"
+    },
+    {
+      "title": "NEVER",
+      "album": "[2014-11-21] The Fall",
+      "src": "./assets/music/%5B2014-11-21%5D%20The%20Fall/01.%20NEVER/NEVER.mp3"
+    },
+    {
+      "title": "The Fall",
+      "album": "[2014-11-21] The Fall",
+      "src": "./assets/music/%5B2014-11-21%5D%20The%20Fall/03.%20The%20Fall/The%20Fall.mp3"
+    },
+    {
+      "title": "white girl",
+      "album": "[2014-11-21] The Fall",
+      "src": "./assets/music/%5B2014-11-21%5D%20The%20Fall/04.%20white%20girl/white%20girl.mp3"
+    },
+    {
+      "title": "a message to tina belcher (feat. Fifty Grand)",
+      "album": "[2014-12-01] ♡ ʳ ᵃ ʳ ᵉ ♡",
+      "src": "./assets/music/%5B2014-12-01%5D%20%E2%99%A1%20%CA%B3%20%E1%B5%83%20%CA%B3%20%E1%B5%89%20%E2%99%A1/03.%20a%20message%20to%20tina%20belcher%20%28feat.%20Fifty%20Grand%29/a%20message%20to%20tina%20belcher%20%28feat.%20Fifty%20Grand%29.mp3"
+    },
+    {
+      "title": "alone",
+      "album": "[2014-12-01] ♡ ʳ ᵃ ʳ ᵉ ♡",
+      "src": "./assets/music/%5B2014-12-01%5D%20%E2%99%A1%20%CA%B3%20%E1%B5%83%20%CA%B3%20%E1%B5%89%20%E2%99%A1/01.%20alone/alone.mp3"
+    },
+    {
+      "title": "rare (feat. Fifty Grand)",
+      "album": "[2014-12-01] ♡ ʳ ᵃ ʳ ᵉ ♡",
+      "src": "./assets/music/%5B2014-12-01%5D%20%E2%99%A1%20%CA%B3%20%E1%B5%83%20%CA%B3%20%E1%B5%89%20%E2%99%A1/02.%20rare%20%28feat.%20Fifty%20Grand%29/rare%20%28feat.%20Fifty%20Grand%29.mp3"
+    },
+    {
+      "title": "FUXK (feat. $ki Mask The Slump God)",
+      "album": "[2015-04-20] Members Only, Vol. 1",
+      "src": "./assets/music/%5B2015-04-20%5D%20Members%20Only%2C%20Vol.%201/05.%20FUXK%20%28feat.%20%24ki%20Mask%20The%20Slump%20God%29/FUXK%20%28feat.%20%24ki%20Mask%20The%20Slump%20God%29.mp3"
+    },
+    {
+      "title": "GXD DAMN (feat. XXXTENTACION)",
+      "album": "[2015-04-20] Members Only, Vol. 1",
+      "src": "./assets/music/%5B2015-04-20%5D%20Members%20Only%2C%20Vol.%201/03.%20GXD%20DAMN%20%28feat.%20XXXTENTACION%29/GXD%20DAMN%20%28feat.%20XXXTENTACION%29.mp3"
+    },
+    {
+      "title": "Planet Drool (feat. XXXTENTACION)",
+      "album": "[2015-04-20] Members Only, Vol. 1",
+      "src": "./assets/music/%5B2015-04-20%5D%20Members%20Only%2C%20Vol.%201/06.%20Planet%20Drool%20%28feat.%20XXXTENTACION%29/Planet%20Drool%20%28feat.%20XXXTENTACION%29.mp3"
+    },
+    {
+      "title": "I AM!",
+      "album": "[2015-10-31] Members Only, Vol. 2",
+      "src": "./assets/music/%5B2015-10-31%5D%20Members%20Only%2C%20Vol.%202/20.%20I%20AM%21/I%20AM%21.mp3"
+    },
+    {
+      "title": "LUNACY (feat. XXXTENTACION)",
+      "album": "[2015-10-31] Members Only, Vol. 2",
+      "src": "./assets/music/%5B2015-10-31%5D%20Members%20Only%2C%20Vol.%202/15.%20LUNACY%20%28feat.%20XXXTENTACION%29/LUNACY%20%28feat.%20XXXTENTACION%29.mp3"
+    },
+    {
+      "title": "Orgy",
+      "album": "[2015-10-31] Members Only, Vol. 2",
+      "src": "./assets/music/%5B2015-10-31%5D%20Members%20Only%2C%20Vol.%202/08.%20Orgy/Orgy.mp3"
+    },
+    {
+      "title": "Playboy Bunny!",
+      "album": "[2015-10-31] Members Only, Vol. 2",
+      "src": "./assets/music/%5B2015-10-31%5D%20Members%20Only%2C%20Vol.%202/17.%20Playboy%20Bunny%21/Playboy%20Bunny%21.mp3"
+    },
+    {
+      "title": "SPLASH!",
+      "album": "[2015-10-31] Members Only, Vol. 2",
+      "src": "./assets/music/%5B2015-10-31%5D%20Members%20Only%2C%20Vol.%202/04.%20SPLASH%21/SPLASH%21.mp3"
+    },
+    {
+      "title": "VERY RARE FOREVER FREESTYLE",
+      "album": "[2015-10-31] Members Only, Vol. 2",
+      "src": "./assets/music/%5B2015-10-31%5D%20Members%20Only%2C%20Vol.%202/09.%20VERY%20RARE%20FOREVER%20FREESTYLE/VERY%20RARE%20FOREVER%20FREESTYLE.mp3"
+    },
+    {
+      "title": "XANAX!",
+      "album": "[2015-10-31] Members Only, Vol. 2",
+      "src": "./assets/music/%5B2015-10-31%5D%20Members%20Only%2C%20Vol.%202/19.%20XANAX%21/XANAX%21.mp3"
+    },
+    {
+      "title": "01 MANIKIN (feat. WiFisFuneral)",
+      "album": "[2016-03-18] ItWasntEnough",
+      "src": "./assets/music/%5B2016-03-18%5D%20ItWasntEnough/02.%2001%20MANIKIN%20%28feat.%20WiFisFuneral%29/01%20MANIKIN%20%28feat.%20WiFisFuneral%29.mp3"
+    },
+    {
+      "title": "I LUv My CLiQuE LiKe KaNyE WeSt (feat. WiFisFuneral)",
+      "album": "[2016-03-18] ItWasntEnough",
+      "src": "./assets/music/%5B2016-03-18%5D%20ItWasntEnough/03.%20I%20LUv%20My%20CLiQuE%20LiKe%20KaNyE%20WeSt%20%28feat.%20WiFisFuneral%29/I%20LUv%20My%20CLiQuE%20LiKe%20KaNyE%20WeSt%20%28feat.%20WiFisFuneral%29.mp3"
+    },
+    {
+      "title": "Snow (feat. Killstation)",
+      "album": "[2016-03-18] ItWasntEnough",
+      "src": "./assets/music/%5B2016-03-18%5D%20ItWasntEnough/01.%20Snow%20%28feat.%20Killstation%29/Snow%20%28feat.%20Killstation%29.mp3"
+    },
+    {
+      "title": "KING",
+      "album": "[2016-04-28] WILLY WONKA WAS A CHILD MURDERER",
+      "src": "./assets/music/%5B2016-04-28%5D%20WILLY%20WONKA%20WAS%20A%20CHILD%20MURDERER/02.%20KING/KING.mp3"
+    },
+    {
+      "title": "NEVER",
+      "album": "[2016-04-28] WILLY WONKA WAS A CHILD MURDERER",
+      "src": "./assets/music/%5B2016-04-28%5D%20WILLY%20WONKA%20WAS%20A%20CHILD%20MURDERER/04.%20NEVER/NEVER.mp3"
+    },
+    {
+      "title": "Valentine",
+      "album": "[2016-04-28] WILLY WONKA WAS A CHILD MURDERER",
+      "src": "./assets/music/%5B2016-04-28%5D%20WILLY%20WONKA%20WAS%20A%20CHILD%20MURDERER/01.%20Valentine/Valentine.mp3"
+    },
+    {
+      "title": "I don_t wanna do this anymore",
+      "album": "[2017-05-16] Revenge",
+      "src": "./assets/music/%5B2017-05-16%5D%20Revenge/02.%20I%20don_t%20wanna%20do%20this%20anymore/I%20don_t%20wanna%20do%20this%20anymore.mp3"
+    },
+    {
+      "title": "KING",
+      "album": "[2017-05-16] Revenge",
+      "src": "./assets/music/%5B2017-05-16%5D%20Revenge/05.%20KING/KING.mp3"
+    },
+    {
+      "title": "looking for a star (CANT GET YOU OUT OF MY HEAD)",
+      "album": "[2017-05-16] Revenge",
+      "src": "./assets/music/%5B2017-05-16%5D%20Revenge/03.%20looking%20for%20a%20star%20%28CANT%20GET%20YOU%20OUT%20OF%20MY%20HEAD%29/looking%20for%20a%20star%20%28CANT%20GET%20YOU%20OUT%20OF%20MY%20HEAD%29.mp3"
+    },
+    {
+      "title": "R.I.P ROACH _EAST SIDE SOULJA_ (feat. $ki Mask The Slump God)",
+      "album": "[2017-05-16] Revenge",
+      "src": "./assets/music/%5B2017-05-16%5D%20Revenge/08.%20R.I.P%20ROACH%20_EAST%20SIDE%20SOULJA_%20%28feat.%20%24ki%20Mask%20The%20Slump%20God%29/R.I.P%20ROACH%20_EAST%20SIDE%20SOULJA_%20%28feat.%20%24ki%20Mask%20The%20Slump%20God%29.mp3"
+    },
+    {
+      "title": "Valentine",
+      "album": "[2017-05-16] Revenge",
+      "src": "./assets/music/%5B2017-05-16%5D%20Revenge/04.%20Valentine/Valentine.mp3"
+    },
+    {
+      "title": "YuNg BrAtZ",
+      "album": "[2017-05-16] Revenge",
+      "src": "./assets/music/%5B2017-05-16%5D%20Revenge/07.%20YuNg%20BrAtZ/YuNg%20BrAtZ.mp3"
+    },
+    {
+      "title": "Boost!",
+      "album": "[2017-06-26] Members Only, Vol. 3",
+      "src": "./assets/music/%5B2017-06-26%5D%20Members%20Only%2C%20Vol.%203/09.%20Boost%21/Boost%21.mp3"
+    },
+    {
+      "title": "Chokehold (feat. Kin$oul)",
+      "album": "[2017-06-26] Members Only, Vol. 3",
+      "src": "./assets/music/%5B2017-06-26%5D%20Members%20Only%2C%20Vol.%203/10.%20Chokehold%20%28feat.%20Kin%24oul%29/Chokehold%20%28feat.%20Kin%24oul%29.mp3"
+    },
+    {
+      "title": "FIND ME (Intro)",
+      "album": "[2017-06-26] Members Only, Vol. 3",
+      "src": "./assets/music/%5B2017-06-26%5D%20Members%20Only%2C%20Vol.%203/01.%20FIND%20ME%20%28Intro%29/FIND%20ME%20%28Intro%29.mp3"
+    },
+    {
+      "title": "Invisible Klip (feat. $ki Mask The Slump God and Robb Bank$)",
+      "album": "[2017-06-26] Members Only, Vol. 3",
+      "src": "./assets/music/%5B2017-06-26%5D%20Members%20Only%2C%20Vol.%203/22.%20Invisible%20Klip%20%28feat.%20%24ki%20Mask%20The%20Slump%20God%20and%20Robb%20Bank%24%29/Invisible%20Klip%20%28feat.%20%24ki%20Mask%20The%20Slump%20God%20and%20Robb%20Bank%24%29.mp3"
+    },
+    {
+      "title": "Lol (feat. Flyboy Tarantino and Kid Trunks)",
+      "album": "[2017-06-26] Members Only, Vol. 3",
+      "src": "./assets/music/%5B2017-06-26%5D%20Members%20Only%2C%20Vol.%203/21.%20Lol%20%28feat.%20Flyboy%20Tarantino%20and%20Kid%20Trunks%29/Lol%20%28feat.%20Flyboy%20Tarantino%20and%20Kid%20Trunks%29.mp3"
+    },
+    {
+      "title": "Off The Wall! (feat. $ki Mask The Slump God)",
+      "album": "[2017-06-26] Members Only, Vol. 3",
+      "src": "./assets/music/%5B2017-06-26%5D%20Members%20Only%2C%20Vol.%203/02.%20Off%20The%20Wall%21%20%28feat.%20%24ki%20Mask%20The%20Slump%20God%29/Off%20The%20Wall%21%20%28feat.%20%24ki%20Mask%20The%20Slump%20God%29.mp3"
+    },
+    {
+      "title": "WHAT IN XXXTARNATION!_ (feat. $ki Mask The Slump God)",
+      "album": "[2017-06-26] Members Only, Vol. 3",
+      "src": "./assets/music/%5B2017-06-26%5D%20Members%20Only%2C%20Vol.%203/03.%20WHAT%20IN%20XXXTARNATION%21_%20%28feat.%20%24ki%20Mask%20The%20Slump%20God%29/WHAT%20IN%20XXXTARNATION%21_%20%28feat.%20%24ki%20Mask%20The%20Slump%20God%29.mp3"
+    },
+    {
+      "title": "Dead Inside (Interlude)",
+      "album": "[2017-08-25] 17",
+      "src": "./assets/music/%5B2017-08-25%5D%2017/07.%20Dead%20Inside%20%28Interlude%29/Dead%20Inside%20%28Interlude%29.mp3"
+    },
+    {
+      "title": "Depression & Obsession",
+      "album": "[2017-08-25] 17",
+      "src": "./assets/music/%5B2017-08-25%5D%2017/03.%20Depression%20%26%20Obsession/Depression%20%26%20Obsession.mp3"
+    },
+    {
+      "title": "Fuck Love (feat. Trippie Redd)",
+      "album": "[2017-08-25] 17",
+      "src": "./assets/music/%5B2017-08-25%5D%2017/08.%20Fuck%20Love%20%28feat.%20Trippie%20Redd%29/Fuck%20Love%20%28feat.%20Trippie%20Redd%29.mp3"
+    },
+    {
+      "title": "Revenge",
+      "album": "[2017-08-25] 17",
+      "src": "./assets/music/%5B2017-08-25%5D%2017/05.%20Revenge/Revenge.mp3"
+    },
+    {
+      "title": "Save Me",
+      "album": "[2017-08-25] 17",
+      "src": "./assets/music/%5B2017-08-25%5D%2017/06.%20Save%20Me/Save%20Me.mp3"
+    },
+    {
+      "title": "The Explanation",
+      "album": "[2017-08-25] 17",
+      "src": "./assets/music/%5B2017-08-25%5D%2017/01.%20The%20Explanation/The%20Explanation.mp3"
+    },
+    {
+      "title": "A GHETTO CHRISTMAS CAROL",
+      "album": "[2017-12-10] A GHETTO CHRISTMAS CAROL!",
+      "src": "./assets/music/%5B2017-12-10%5D%20A%20GHETTO%20CHRISTMAS%20CAROL%21/01.%20A%20GHETTO%20CHRISTMAS%20CAROL/A%20GHETTO%20CHRISTMAS%20CAROL.mp3"
+    },
+    {
+      "title": "hate will never win",
+      "album": "[2017-12-10] A GHETTO CHRISTMAS CAROL!",
+      "src": "./assets/music/%5B2017-12-10%5D%20A%20GHETTO%20CHRISTMAS%20CAROL%21/02.%20hate%20will%20never%20win/hate%20will%20never%20win.mp3"
+    },
+    {
+      "title": "Indecision",
+      "album": "[2017-12-10] A GHETTO CHRISTMAS CAROL!",
+      "src": "./assets/music/%5B2017-12-10%5D%20A%20GHETTO%20CHRISTMAS%20CAROL%21/05.%20Indecision/Indecision.mp3"
+    },
+    {
+      "title": "Red Light!",
+      "album": "[2017-12-10] A GHETTO CHRISTMAS CAROL!",
+      "src": "./assets/music/%5B2017-12-10%5D%20A%20GHETTO%20CHRISTMAS%20CAROL%21/04.%20Red%20Light%21/Red%20Light%21.mp3"
+    },
+    {
+      "title": "UP LIKE AN INSOMNIAC (Freestyle)",
+      "album": "[2017-12-10] A GHETTO CHRISTMAS CAROL!",
+      "src": "./assets/music/%5B2017-12-10%5D%20A%20GHETTO%20CHRISTMAS%20CAROL%21/03.%20UP%20LIKE%20AN%20INSOMNIAC%20%28Freestyle%29/UP%20LIKE%20AN%20INSOMNIAC%20%28Freestyle%29.mp3"
+    },
+    {
+      "title": "ALONE, PART 3",
+      "album": "[2018-03-16] _",
+      "src": "./assets/music/%5B2018-03-16%5D%20_/02.%20ALONE%2C%20PART%203/ALONE%2C%20PART%203.mp3"
+    },
+    {
+      "title": "Hope",
+      "album": "[2018-03-16] _",
+      "src": "./assets/music/%5B2018-03-16%5D%20_/16.%20Hope/Hope.mp3"
+    },
+    {
+      "title": "Introduction (instructions)",
+      "album": "[2018-03-16] _",
+      "src": "./assets/music/%5B2018-03-16%5D%20_/01.%20Introduction%20%28instructions%29/Introduction%20%28instructions%29.mp3"
+    },
+    {
+      "title": "Moonlight",
+      "album": "[2018-03-16] _",
+      "src": "./assets/music/%5B2018-03-16%5D%20_/03.%20Moonlight/Moonlight.mp3"
+    },
+    {
+      "title": "SAD!",
+      "album": "[2018-03-16] _",
+      "src": "./assets/music/%5B2018-03-16%5D%20_/04.%20SAD%21/SAD%21.mp3"
+    },
+    {
+      "title": "the remedy for a broken heart (why am I so in love)",
+      "album": "[2018-03-16] _",
+      "src": "./assets/music/%5B2018-03-16%5D%20_/05.%20the%20remedy%20for%20a%20broken%20heart%20%28why%20am%20I%20so%20in%20love%29/the%20remedy%20for%20a%20broken%20heart%20%28why%20am%20I%20so%20in%20love%29.mp3"
+    },
+    {
+      "title": "difference (interlude)",
+      "album": "[2018-12-07] SKINS",
+      "src": "./assets/music/%5B2018-12-07%5D%20SKINS/08.%20difference%20%28interlude%29/difference%20%28interlude%29.mp3"
+    },
+    {
+      "title": "Guardian angel (feat. Shiloh Dynasty)",
+      "album": "[2018-12-07] SKINS",
+      "src": "./assets/music/%5B2018-12-07%5D%20SKINS/02.%20Guardian%20angel%20%28feat.%20Shiloh%20Dynasty%29/Guardian%20angel%20%28feat.%20Shiloh%20Dynasty%29.mp3"
+    },
+    {
+      "title": "I don_t let go",
+      "album": "[2018-12-07] SKINS",
+      "src": "./assets/music/%5B2018-12-07%5D%20SKINS/09.%20I%20don_t%20let%20go/I%20don_t%20let%20go.mp3"
+    },
+    {
+      "title": "Introduction",
+      "album": "[2018-12-07] SKINS",
+      "src": "./assets/music/%5B2018-12-07%5D%20SKINS/01.%20Introduction/Introduction.mp3"
+    },
+    {
+      "title": "One Minute (feat. Kanye West and Travis Barker)",
+      "album": "[2018-12-07] SKINS",
+      "src": "./assets/music/%5B2018-12-07%5D%20SKINS/07.%20One%20Minute%20%28feat.%20Kanye%20West%20and%20Travis%20Barker%29/One%20Minute%20%28feat.%20Kanye%20West%20and%20Travis%20Barker%29.mp3"
+    },
+    {
+      "title": "STARING AT THE SKY",
+      "album": "[2018-12-07] SKINS",
+      "src": "./assets/music/%5B2018-12-07%5D%20SKINS/06.%20STARING%20AT%20THE%20SKY/STARING%20AT%20THE%20SKY.mp3"
+    },
+    {
+      "title": "Train food",
+      "album": "[2018-12-07] SKINS",
+      "src": "./assets/music/%5B2018-12-07%5D%20SKINS/03.%20Train%20food/Train%20food.mp3"
+    },
+    {
+      "title": "what are you so afraid of",
+      "album": "[2018-12-07] SKINS",
+      "src": "./assets/music/%5B2018-12-07%5D%20SKINS/10.%20what%20are%20you%20so%20afraid%20of/what%20are%20you%20so%20afraid%20of.mp3"
+    },
+    {
+      "title": "whoa (mind in awe)",
+      "album": "[2018-12-07] SKINS",
+      "src": "./assets/music/%5B2018-12-07%5D%20SKINS/04.%20whoa%20%28mind%20in%20awe%29/whoa%20%28mind%20in%20awe%29.mp3"
+    },
+    {
+      "title": "Corey_s Intro",
+      "album": "[2019-01-23] Members Only, Vol. 4",
+      "src": "./assets/music/%5B2019-01-23%5D%20Members%20Only%2C%20Vol.%204/01.%20Corey_s%20Intro/Corey_s%20Intro.mp3"
+    },
+    {
+      "title": "Fall In Love With Death (feat. Coolie Cut and Kin$oul)",
+      "album": "[2019-01-23] Members Only, Vol. 4",
+      "src": "./assets/music/%5B2019-01-23%5D%20Members%20Only%2C%20Vol.%204/07.%20Fall%20In%20Love%20In%20Death%20%28feat.%20Coolie%20Cut%20and%20Kin%24oul%29/Fall%20In%20Love%20With%20Death%20%28feat.%20Coolie%20Cut%20and%20Kin%24oul%29.mp3"
+    },
+    {
+      "title": "Love Hard, Fall Fast (feat. Craig Xen)",
+      "album": "[2019-01-23] Members Only, Vol. 4",
+      "src": "./assets/music/%5B2019-01-23%5D%20Members%20Only%2C%20Vol.%204/08.%20Love%20Hard%2C%20Fall%20Fast%20%28feat.%20Craig%20Xen%29/Love%20Hard%2C%20Fall%20Fast%20%28feat.%20Craig%20Xen%29.mp3"
+    },
+    {
+      "title": "Nothing (feat. Craig Xen and Killstation)",
+      "album": "[2019-01-23] Members Only, Vol. 4",
+      "src": "./assets/music/%5B2019-01-23%5D%20Members%20Only%2C%20Vol.%204/02.%20Nothing%20%28feat.%20Craig%20Xen%20and%20Killstation%29/Nothing%20%28feat.%20Craig%20Xen%20and%20Killstation%29.mp3"
+    },
+    {
+      "title": "PROUD PUPPY LOVER!",
+      "album": "[2019-01-23] Members Only, Vol. 4",
+      "src": "./assets/music/%5B2019-01-23%5D%20Members%20Only%2C%20Vol.%204/16.%20PROUD%20PUPPY%20LOVER%21/PROUD%20PUPPY%20LOVER%21.mp3"
+    },
+    {
+      "title": "Woah (Freestyle)",
+      "album": "[2019-01-23] Members Only, Vol. 4",
+      "src": "./assets/music/%5B2019-01-23%5D%20Members%20Only%2C%20Vol.%204/17.%20Woah%20%28Freestyle%29/Woah%20%28Freestyle%29.mp3"
+    },
+    {
+      "title": "bad vibes forever (feat. PnB Rock and Trippie Redd)",
+      "album": "[2019-12-06] Bad Vibes Forever",
+      "src": "./assets/music/%5B2019-12-06%5D%20Bad%20Vibes%20Forever/04.%20bad%20vibes%20forever%20%28feat.%20PnB%20Rock%20and%20Trippie%20Redd%29/bad%20vibes%20forever%20%28feat.%20PnB%20Rock%20and%20Trippie%20Redd%29.mp3"
+    },
+    {
+      "title": "before i realize",
+      "album": "[2019-12-06] Bad Vibes Forever",
+      "src": "./assets/music/%5B2019-12-06%5D%20Bad%20Vibes%20Forever/09.%20before%20i%20realize/before%20i%20realize.mp3"
+    },
+    {
+      "title": "Ecstasy (feat. Noah Cyrus)",
+      "album": "[2019-12-06] Bad Vibes Forever",
+      "src": "./assets/music/%5B2019-12-06%5D%20Bad%20Vibes%20Forever/10.%20Ecstasy%20%28feat.%20Noah%20Cyrus%29/Ecstasy%20%28feat.%20Noah%20Cyrus%29.mp3"
+    },
+    {
+      "title": "HEARTEATER",
+      "album": "[2019-12-06] Bad Vibes Forever",
+      "src": "./assets/music/%5B2019-12-06%5D%20Bad%20Vibes%20Forever/21.%20HEARTEATER/HEARTEATER.mp3"
+    },
+    {
+      "title": "introduction",
+      "album": "[2019-12-06] Bad Vibes Forever",
+      "src": "./assets/music/%5B2019-12-06%5D%20Bad%20Vibes%20Forever/01.%20introduction/introduction.mp3"
+    },
+    {
+      "title": "the interlude that never ends",
+      "album": "[2019-12-06] Bad Vibes Forever",
+      "src": "./assets/music/%5B2019-12-06%5D%20Bad%20Vibes%20Forever/14.%20the%20interlude%20that%20never%20ends/the%20interlude%20that%20never%20ends.mp3"
+    },
+    {
+      "title": "THE ONLY TIME I FEEL ALIVE (feat. Craig Xen)",
+      "album": "[2019-12-06] Bad Vibes Forever",
+      "src": "./assets/music/%5B2019-12-06%5D%20Bad%20Vibes%20Forever/13.%20THE%20ONLY%20TIME%20I%20FEEL%20ALIVE%20%28feat.%20Craig%20Xen%29/THE%20ONLY%20TIME%20I%20FEEL%20ALIVE%20%28feat.%20Craig%20Xen%29.mp3"
+    },
+    {
+      "title": "UGLY",
+      "album": "[2019-12-06] Bad Vibes Forever",
+      "src": "./assets/music/%5B2019-12-06%5D%20Bad%20Vibes%20Forever/03.%20UGLY/UGLY.mp3"
+    },
+    {
+      "title": "wanna grow old (i won_t let go) (feat. Jimmy Levy)",
+      "album": "[2019-12-06] Bad Vibes Forever",
+      "src": "./assets/music/%5B2019-12-06%5D%20Bad%20Vibes%20Forever/20.%20wanna%20grow%20old%20%28i%20won_t%20let%20go%29%20%28feat.%20Jimmy%20Levy%29/wanna%20grow%20old%20%28i%20won_t%20let%20go%29%20%28feat.%20Jimmy%20Levy%29.mp3"
+    },
+    {
+      "title": "A Nigga Like You (feat. XXXTENTACION)",
+      "album": "Deleted Features",
+      "src": "./assets/music/Deleted%20Features/A%20Nigga%20Like%20You%20%28feat.%20XXXTENTACION%29/A%20Nigga%20Like%20You%20%28feat.%20XXXTENTACION%29.mp3"
+    },
+    {
+      "title": "Fatality Snippet (feat. XXXTENTACION)",
+      "album": "Deleted Features",
+      "src": "./assets/music/Deleted%20Features/Fatality%20Snippet%20%28feat.%20XXXTENTACION%29/Fatality%20Snippet%20%28feat.%20XXXTENTACION%29.mp3"
+    },
+    {
+      "title": "GHOST BUSTERS (feat. XXXTENTACION and $ki Mask The Slump God)",
+      "album": "Deleted Features",
+      "src": "./assets/music/Deleted%20Features/GHOST%20BUSTERS%20%28feat.%20XXXTENTACION%20and%20%24ki%20Mask%20The%20Slump%20God%29/GHOST%20BUSTERS%20%28feat.%20XXXTENTACION%20and%20%24ki%20Mask%20The%20Slump%20God%29.mp3"
+    },
+    {
+      "title": "Kick In The Door (feat. XXXTENTACION)",
+      "album": "Deleted Features",
+      "src": "./assets/music/Deleted%20Features/Kick%20In%20The%20Door%20%28feat.%20XXXTENTACION%29/Kick%20In%20The%20Door%20%28feat.%20XXXTENTACION%29.mp3"
+    },
+    {
+      "title": "Live Off A Lick (feat. XXXTENTACION)",
+      "album": "Deleted Features",
+      "src": "./assets/music/Deleted%20Features/Live%20Off%20A%20Lick%20%28feat.%20XXXTENTACION%29/Live%20Off%20A%20Lick%20%28feat.%20XXXTENTACION%29.mp3"
+    },
+    {
+      "title": "Mega Man (feat. XXXTENTACION and $ki Mask The Slump God)",
+      "album": "Deleted Features",
+      "src": "./assets/music/Deleted%20Features/Mega%20Man%20%28feat.%20XXXTENTACION%20and%20%24ki%20Mask%20The%20Slump%20God%29/Mega%20Man%20%28feat.%20XXXTENTACION%20and%20%24ki%20Mask%20The%20Slump%20God%29.mp3"
+    },
+    {
+      "title": "Netflix And Chill (feat. XXXTENTACION and $ki Mask The Slump God)",
+      "album": "Deleted Features",
+      "src": "./assets/music/Deleted%20Features/Netflix%20And%20Chill%20%28feat.%20XXXTENTACION%20and%20%24ki%20Mask%20The%20Slump%20God%29/Netflix%20And%20Chill%20%28feat.%20XXXTENTACION%20and%20%24ki%20Mask%20The%20Slump%20God%29.mp3"
+    },
+    {
+      "title": "rolling (feat. XXXTENTACION)",
+      "album": "Deleted Features",
+      "src": "./assets/music/Deleted%20Features/rolling%20%28feat.%20XXXTENTACION%29/rolling%20%28feat.%20XXXTENTACION%29.mp3"
+    },
+    {
+      "title": "zones (feat. XXXTENTACION)",
+      "album": "Deleted Features",
+      "src": "./assets/music/Deleted%20Features/zones%20%28feat.%20XXXTENTACION%29/zones%20%28feat.%20XXXTENTACION%29.mp3"
+    },
+    {
+      "title": "Angels 2 Demons (feat. J $OUL)",
+      "album": "Deleted Files",
+      "src": "./assets/music/Deleted%20Files/Angels%202%20Demons%20%28feat.%20J%20%24OUL%29/Angels%202%20Demons%20%28feat.%20J%20%24OUL%29.mp3"
+    },
+    {
+      "title": "Chapter 1 (outro)",
+      "album": "Deleted Files",
+      "src": "./assets/music/Deleted%20Files/Chapter%201%20%28outro%29/Chapter%201%20%28outro%29.mp3"
+    },
+    {
+      "title": "Dragonheart",
+      "album": "Deleted Files",
+      "src": "./assets/music/Deleted%20Files/Dragonheart/Dragonheart.mp3"
+    },
+    {
+      "title": "Red",
+      "album": "Deleted Files",
+      "src": "./assets/music/Deleted%20Files/Red/Red.mp3"
+    },
+    {
+      "title": "SHUT UP",
+      "album": "Deleted Files",
+      "src": "./assets/music/Deleted%20Files/SHUT%20UP/SHUT%20UP.mp3"
+    },
+    {
+      "title": "Whores On The Boards (feat. Nyora Spouse)",
+      "album": "Deleted Files",
+      "src": "./assets/music/Deleted%20Files/Whores%20On%20The%20Boards%20%28feat.%20Nyora%20Spouse%29/Whores%20On%20The%20Boards%20%28feat.%20Nyora%20Spouse%29.mp3"
+    },
+    {
+      "title": "4PE@T (SNIPPET)",
+      "album": "Miscellaneous",
+      "src": "./assets/music/Miscellaneous/Featured%20Snippets/4PE%40T%20%28SNIPPET%29/4PE%40T%20%28SNIPPET%29.mp3"
+    },
+    {
+      "title": "All For Me (feat. XXXTENTACION and Smokepurpp) Clean",
+      "album": "Miscellaneous",
+      "src": "./assets/music/Miscellaneous/Clean%20Versions/All%20For%20Me%20%28feat.%20XXXTENTACION%20and%20Smokepurpp%29%20Clean/All%20For%20Me%20%28feat.%20XXXTENTACION%20and%20Smokepurpp%29%20Clean.mp3"
+    },
+    {
+      "title": "Alone Pt. 1",
+      "album": "Miscellaneous",
+      "src": "./assets/music/Miscellaneous/Others/Alone%20Pt.%201/Alone%20Pt.%201.mp3"
+    },
+    {
+      "title": "Banded Up (feat. XXXTENTACION) [Album Version]",
+      "album": "Miscellaneous",
+      "src": "./assets/music/Miscellaneous/Alternative%20Versions/Banded%20Up%20%28feat.%20XXXTENTACION%29%20%5BAlbum%20Version%5D/Banded%20Up%20%28feat.%20XXXTENTACION%29%20%5BAlbum%20Version%5D.mp3"
+    },
+    {
+      "title": "CHASE _ glass shards (feat. Ikabod Veins) Clean",
+      "album": "Miscellaneous",
+      "src": "./assets/music/Miscellaneous/Clean%20Versions/CHASE%20-%20glass%20shards%20%28feat.%20Ikabod%20Veins%29%20Clean/CHASE%20_%20glass%20shards%20%28feat.%20Ikabod%20Veins%29%20Clean.mp3"
+    },
+    {
+      "title": "Daemons (feat. Kemba and Joey Bada$$) Clean",
+      "album": "Miscellaneous",
+      "src": "./assets/music/Miscellaneous/Clean%20Versions/Daemons%20%28feat.%20Kemba%20and%20Joey%20Bada%24%24%29%20Clean/Daemons%20%28feat.%20Kemba%20and%20Joey%20Bada%24%24%29%20Clean.mp3"
+    },
+    {
+      "title": "Eat It Up Clean",
+      "album": "Miscellaneous",
+      "src": "./assets/music/Miscellaneous/Clean%20Versions/Eat%20It%20Up%20Clean/Eat%20It%20Up%20Clean.mp3"
+    },
+    {
+      "title": "FATALITY SNIPPET !",
+      "album": "Miscellaneous",
+      "src": "./assets/music/Miscellaneous/Featured%20Snippets/FATALITY%20SNIPPET%20%21/FATALITY%20SNIPPET%20%21.mp3"
+    },
+    {
+      "title": "Guardian angel (feat. Shiloh Dynasty) Clean",
+      "album": "Miscellaneous",
+      "src": "./assets/music/Miscellaneous/Clean%20Versions/Guardian%20angel%20%28feat.%20Shiloh%20Dynasty%29%20Clean/Guardian%20angel%20%28feat.%20Shiloh%20Dynasty%29%20Clean.mp3"
+    },
+    {
+      "title": "Kill My Vibe (feat. Tom G) Clean",
+      "album": "Miscellaneous",
+      "src": "./assets/music/Miscellaneous/Clean%20Versions/Kill%20My%20Vibe%20%28feat.%20Tom%20G%29%20Clean/Kill%20My%20Vibe%20%28feat.%20Tom%20G%29%20Clean.mp3"
+    },
+    {
+      "title": "M011Y _FREESTYLE_",
+      "album": "Miscellaneous",
+      "src": "./assets/music/Miscellaneous/Alternative%20Versions/M011Y%20_FREESTYLE_/M011Y%20_FREESTYLE_.mp3"
+    },
+    {
+      "title": "May I Flex (feat. XXXTENTACION and Momoh) (OG)",
+      "album": "Miscellaneous",
+      "src": "./assets/music/Miscellaneous/Alternative%20Versions/May%20I%20Flex%20%28feat.%20XXXTENTACION%20and%20Momoh%29%20%28OG%29/May%20I%20Flex%20%28feat.%20XXXTENTACION%20and%20Momoh%29%20%28OG%29.mp3"
+    },
+    {
+      "title": "Mia Wallace Pt 2 (feat. Kid Trunks, Fynesse, and Bass Santana)",
+      "album": "Miscellaneous",
+      "src": "./assets/music/Miscellaneous/Others/Mia%20Wallace%20Pt%202%20%28feat.%20Kid%20Trunks%2C%20Fynesse%2C%20and%20Bass%20Santana%29/Mia%20Wallace%20Pt%202%20%28feat.%20Kid%20Trunks%2C%20Fynesse%2C%20and%20Bass%20Santana%29.mp3"
+    },
+    {
+      "title": "RIOT",
+      "album": "Miscellaneous",
+      "src": "./assets/music/Miscellaneous/Alternative%20Versions/RIOT/RIOT.mp3"
+    },
+    {
+      "title": "School Shooters (feat. Lil Wayne) Clean",
+      "album": "Miscellaneous",
+      "src": "./assets/music/Miscellaneous/Clean%20Versions/School%20Shooters%20%28feat.%20Lil%20Wayne%29%20Clean/School%20Shooters%20%28feat.%20Lil%20Wayne%29%20Clean.mp3"
+    },
+    {
+      "title": "THE ONLY TIME I FEEL ALIVE (feat. Craig Xen) Clean",
+      "album": "Miscellaneous",
+      "src": "./assets/music/Miscellaneous/Clean%20Versions/THE%20ONLY%20TIME%20I%20FEEL%20ALIVE%20%28feat.%20Craig%20Xen%29%20Clean/THE%20ONLY%20TIME%20I%20FEEL%20ALIVE%20%28feat.%20Craig%20Xen%29%20Clean.mp3"
+    },
+    {
+      "title": "Triumph",
+      "album": "Miscellaneous",
+      "src": "./assets/music/Miscellaneous/Others/Triumph/Triumph.mp3"
+    },
+    {
+      "title": "Uptown _ Bustdown (feat. XXXTENTACION, PnB Rock, and Lil Durk) Clean",
+      "album": "Miscellaneous",
+      "src": "./assets/music/Miscellaneous/Clean%20Versions/Uptown%20-%20Bustdown%20%28feat.%20XXXTENTACION%2C%20PnB%20Rock%2C%20and%20Lil%20Durk%29%20Clean/Uptown%20_%20Bustdown%20%28feat.%20XXXTENTACION%2C%20PnB%20Rock%2C%20and%20Lil%20Durk%29%20Clean.mp3"
+    },
+    {
+      "title": "VOICES (feat. XXXTENTACION) Clean",
+      "album": "Miscellaneous",
+      "src": "./assets/music/Miscellaneous/Clean%20Versions/VOICES%20%28feat.%20XXXTENTACION%29%20Clean/VOICES%20%28feat.%20XXXTENTACION%29%20Clean.mp3"
+    },
+    {
+      "title": "WAAAXXX",
+      "album": "Miscellaneous",
+      "src": "./assets/music/Miscellaneous/Productions%20%26%20Co-Productions/WAAAXXX/WAAAXXX.mp3"
+    },
+    {
+      "title": "what are you so afraid of",
+      "album": "Miscellaneous",
+      "src": "./assets/music/Miscellaneous/Others/what%20are%20you%20so%20afraid%20of/what%20are%20you%20so%20afraid%20of.mp3"
+    },
+    {
+      "title": "#ImSippinTeaInYoHood",
+      "album": "SoundCloud",
+      "src": "./assets/music/SoundCloud/%23ImSippinTeaInYoHood/%23ImSippinTeaInYoHood.mp3"
+    },
+    {
+      "title": "#PROUDCATOWNER #IHATERAPPERS #IEATPUSSY",
+      "album": "SoundCloud",
+      "src": "./assets/music/SoundCloud/%23PROUDCATOWNER%20%23IHATERAPPERS%20%23IEATPUSSY/%23PROUDCATOWNER%20%23IHATERAPPERS%20%23IEATPUSSY.mp3"
+    },
+    {
+      "title": "$aUcE!",
+      "album": "SoundCloud",
+      "src": "./assets/music/SoundCloud/%24aUcE%21/%24aUcE%21.mp3"
+    },
+    {
+      "title": "ALONE PART 2",
+      "album": "SoundCloud",
+      "src": "./assets/music/SoundCloud/ALONE%20PART%202/ALONE%20PART%202.mp3"
+    },
+    {
+      "title": "bad vibes forever (feat. PnB Rock and Trippie Redd)",
+      "album": "SoundCloud",
+      "src": "./assets/music/SoundCloud/bad%20vibes%20forever%20%28feat.%20PnB%20Rock%20and%20Trippie%20Redd%29/bad%20vibes%20forever%20%28feat.%20PnB%20Rock%20and%20Trippie%20Redd%29.mp3"
+    },
+    {
+      "title": "Bluddy Katon freestyle",
+      "album": "SoundCloud",
+      "src": "./assets/music/SoundCloud/Bluddy%20Katon%20freestyle/Bluddy%20Katon%20freestyle.mp3"
+    },
+    {
+      "title": "Caution (Snippet)",
+      "album": "SoundCloud",
+      "src": "./assets/music/SoundCloud/Caution%20%28Snippet%29/Caution%20%28Snippet%29.mp3"
+    },
+    {
+      "title": "Clarity (Snippet)",
+      "album": "SoundCloud",
+      "src": "./assets/music/SoundCloud/Clarity%20%28Snippet%29/Clarity%20%28Snippet%29.mp3"
+    },
+    {
+      "title": "Difference (Hxskar Remix)",
+      "album": "SoundCloud",
+      "src": "./assets/music/SoundCloud/Difference%20%28Hxskar%20Remix%29/Difference%20%28Hxskar%20Remix%29.mp3"
+    },
+    {
+      "title": "Dont Test Me (Remix) (feat. WiFisFuneral)",
+      "album": "SoundCloud",
+      "src": "./assets/music/SoundCloud/Dont%20Test%20Me%20%28Remix%29%20%28feat.%20WiFisFuneral%29/Dont%20Test%20Me%20%28Remix%29%20%28feat.%20WiFisFuneral%29.mp3"
+    },
+    {
+      "title": "FAILURE IS NOT AN OPTION Interlude",
+      "album": "SoundCloud",
+      "src": "./assets/music/SoundCloud/FAILURE%20IS%20NOT%20AN%20OPTION%20Interlude/FAILURE%20IS%20NOT%20AN%20OPTION%20Interlude.mp3"
+    },
+    {
+      "title": "GNARLY BASTARD",
+      "album": "SoundCloud",
+      "src": "./assets/music/SoundCloud/GNARLY%20BASTARD/GNARLY%20BASTARD.mp3"
+    },
+    {
+      "title": "HOPE",
+      "album": "SoundCloud",
+      "src": "./assets/music/SoundCloud/HOPE/HOPE.mp3"
+    },
+    {
+      "title": "I AM! (Snippet)",
+      "album": "SoundCloud",
+      "src": "./assets/music/SoundCloud/I%20AM%21%20%28Snippet%29/I%20AM%21%20%28Snippet%29.mp3"
+    },
+    {
+      "title": "IGOTPLENTYDICKTOSHARE (Snippet)",
+      "album": "SoundCloud",
+      "src": "./assets/music/SoundCloud/IGOTPLENTYDICKTOSHARE%20%28Snippet%29/IGOTPLENTYDICKTOSHARE%20%28Snippet%29.mp3"
+    },
+    {
+      "title": "ILOVEITWHENTHEYRUN (feat. Yung Bans and $ki Mask The Slump God)",
+      "album": "SoundCloud",
+      "src": "./assets/music/SoundCloud/ILOVEITWHENTHEYRUN%20%28feat.%20Yung%20Bans%20and%20%24ki%20Mask%20The%20Slump%20God%29/ILOVEITWHENTHEYRUN%20%28feat.%20Yung%20Bans%20and%20%24ki%20Mask%20The%20Slump%20God%29.mp3"
+    },
+    {
+      "title": "IN THIS BITCH LIT, FREE KEKE & FREE 2 WOOP FREESTYLE",
+      "album": "SoundCloud",
+      "src": "./assets/music/SoundCloud/IN%20THIS%20BITCH%20LIT%2C%20FREE%20KEKE%20%26%20FREE%202%20WOOP%20FREESTYLE/IN%20THIS%20BITCH%20LIT%2C%20FREE%20KEKE%20%26%20FREE%202%20WOOP%20FREESTYLE.mp3"
+    },
+    {
+      "title": "Indecision",
+      "album": "SoundCloud",
+      "src": "./assets/music/SoundCloud/Indecision/Indecision.mp3"
+    },
+    {
+      "title": "Jugg Walk!",
+      "album": "SoundCloud",
+      "src": "./assets/music/SoundCloud/Jugg%20Walk%21/Jugg%20Walk%21.mp3"
+    },
+    {
+      "title": "KILL ME (Pain From The Jail Phone)",
+      "album": "SoundCloud",
+      "src": "./assets/music/SoundCloud/KILL%20ME%20%28Pain%20From%20The%20Jail%20Phone%29/KILL%20ME%20%28Pain%20From%20The%20Jail%20Phone%29.mp3"
+    },
+    {
+      "title": "LETS PRETEND WE_RE NUMB",
+      "album": "SoundCloud",
+      "src": "./assets/music/SoundCloud/LETS%20PRETEND%20WE_RE%20NUMB/LETS%20PRETEND%20WE_RE%20NUMB.mp3"
+    },
+    {
+      "title": "Look At Me!",
+      "album": "SoundCloud",
+      "src": "./assets/music/SoundCloud/Look%20At%20Me%21/Look%20At%20Me%21.mp3"
+    },
+    {
+      "title": "Ok Shorty!",
+      "album": "SoundCloud",
+      "src": "./assets/music/SoundCloud/Ok%20Shorty%21/Ok%20Shorty%21.mp3"
+    },
+    {
+      "title": "R U N",
+      "album": "SoundCloud",
+      "src": "./assets/music/SoundCloud/R%20U%20N/R%20U%20N.mp3"
+    },
+    {
+      "title": "Riot",
+      "album": "SoundCloud",
+      "src": "./assets/music/SoundCloud/Riot/Riot.mp3"
+    },
+    {
+      "title": "RUN UP ON ME (SNIPPET)",
+      "album": "SoundCloud",
+      "src": "./assets/music/SoundCloud/RUN%20UP%20ON%20ME%20%28SNIPPET%29/RUN%20UP%20ON%20ME%20%28SNIPPET%29.mp3"
+    },
+    {
+      "title": "Save Me (Snippet)",
+      "album": "SoundCloud",
+      "src": "./assets/music/SoundCloud/Save%20Me%20%28Snippet%29/Save%20Me%20%28Snippet%29.mp3"
+    },
+    {
+      "title": "SHUT UP (Snippet)",
+      "album": "SoundCloud",
+      "src": "./assets/music/SoundCloud/SHUT%20UP%20%28Snippet%29/SHUT%20UP%20%28Snippet%29.mp3"
+    },
+    {
+      "title": "skin",
+      "album": "SoundCloud",
+      "src": "./assets/music/SoundCloud/skin/skin.mp3"
+    },
+    {
+      "title": "SUICIDE PIT (Freestyle)",
+      "album": "SoundCloud",
+      "src": "./assets/music/SoundCloud/SUICIDE%20PIT%20%28Freestyle%29/SUICIDE%20PIT%20%28Freestyle%29.mp3"
+    },
+    {
+      "title": "Teeth (Interlude)",
+      "album": "SoundCloud",
+      "src": "./assets/music/SoundCloud/Teeth%20%28Interlude%29/Teeth%20%28Interlude%29.mp3"
+    },
+    {
+      "title": "Uh Oh, Thots! (Remix) (feat. Trippie Redd)",
+      "album": "SoundCloud",
+      "src": "./assets/music/SoundCloud/Uh%20Oh%2C%20Thots%20%28Remix%29%20%28feat.%20Trippie%20Redd%29/Uh%20Oh%2C%20Thots%21%20%28Remix%29%20%28feat.%20Trippie%20Redd%29.mp3"
+    },
+    {
+      "title": "vice city",
+      "album": "SoundCloud",
+      "src": "./assets/music/SoundCloud/vice%20city/vice%20city.mp3"
+    },
+    {
+      "title": "Who The Fuck Is God (feat. Sully The Chief God and AbsentWill)",
+      "album": "SoundCloud",
+      "src": "./assets/music/SoundCloud/Who%20The%20Fuck%20Is%20God%20%28feat.%20Sully%20The%20Chief%20God%20and%20AbsentWill%29/Who%20The%20Fuck%20Is%20God%20%28feat.%20Sully%20The%20Chief%20God%20and%20AbsentWill%29.mp3"
+    },
+    {
+      "title": "WitDemDicks!",
+      "album": "SoundCloud",
+      "src": "./assets/music/SoundCloud/WitDemDicks%21/WitDemDicks%21.mp3"
+    },
+    {
+      "title": "You_re Thinking Too Much, Stop It",
+      "album": "SoundCloud",
+      "src": "./assets/music/SoundCloud/You_re%20Thinking%20Too%20Much%2C%20Stop%20It/You_re%20Thinking%20Too%20Much%2C%20Stop%20It.mp3"
+    },
+    {
+      "title": "IMALONEIMSORRYCINTHIA",
+      "album": "XXXTRA RARE TRACKS, VOLUME ONE",
+      "src": "./assets/music/XXXTRA%20RARE%20TRACKS%2C%20VOLUME%20ONE/10.%20IMALONEIMSORRYCINTHIA/IMALONEIMSORRYCINTHIA.m4a"
+    }
+  ]
+}

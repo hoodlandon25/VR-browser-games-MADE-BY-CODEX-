@@ -1,7 +1,4 @@
-export const SONGS = [
-  { title: "corridor_lullaby", src: "./assets/audio/corridor_lullaby.mp3" },
-  { title: "glassy_echo", src: "./assets/audio/glassy_echo.mp3" }
-];
+export const SONG_LIBRARY_PATH = "./assets/music/playlist.json";
 
 export const COLORS = {
   fog: "#39402a",

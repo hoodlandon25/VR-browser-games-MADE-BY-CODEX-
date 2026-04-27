@@ -5,6 +5,8 @@ function routeKey() {
   return state.uiRoute.join("/");
 }
 
+const VISIBLE_SONG_ROWS = 5;
+
 AFRAME.registerComponent("ui-surface", {
   init() {
     this.canvas = document.createElement("canvas");
@@ -66,33 +68,43 @@ AFRAME.registerComponent("ui-surface", {
         state.uiRoute = ["files"];
       }
     } else if (currentRoute === "songs") {
-      const listStart = 70;
-      const rowHeight = 28;
-      const index = Math.floor((y - listStart) / rowHeight);
-      if (index >= 0 && index < state.songs.length) {
-        publish("ui:play-song", { index });
-      } else if (y > 218) {
-        state.uiRoute = ["menu"];
+      if (y > 66 && y < 90) {
+        state.songScrollOffset = Math.max(0, state.songScrollOffset - 1);
+      } else if (y > 214 && y < 238) {
+        state.songScrollOffset = Math.min(
+          Math.max(0, state.songs.length - VISIBLE_SONG_ROWS),
+          state.songScrollOffset + 1
+        );
+      } else {
+        const listStart = 100;
+        const rowHeight = 22;
+        const localIndex = Math.floor((y - listStart) / rowHeight);
+        const index = state.songScrollOffset + localIndex;
+        if (localIndex >= 0 && localIndex < VISIBLE_SONG_ROWS && index < state.songs.length) {
+          publish("ui:play-song", { index });
+        } else if (y > 238) {
+          state.uiRoute = ["menu"];
+        }
       }
     } else if (currentRoute === "files") {
       if (y > 90 && y < 128) {
         publish("ui:trigger-upload");
       } else if (y > 140 && y < 178) {
         state.uiRoute = ["files", "advanced"];
-      } else if (y > 218) {
+      } else if (y > 238) {
         state.uiRoute = ["menu"];
       }
     } else if (currentRoute === "files/advanced") {
       if (y > 126 && y < 164) {
         state.uiRoute = ["files", "advanced", "unknown"];
-      } else if (y > 218) {
+      } else if (y > 238) {
         state.uiRoute = ["menu"];
       }
     } else if (currentRoute === "files/advanced/unknown") {
       if (y > 168 && y < 206) {
         state.hiddenMode = !state.hiddenMode;
         publish("hidden-mode:toggled", state.hiddenMode);
-      } else if (y > 218) {
+      } else if (y > 238) {
         state.uiRoute = ["menu"];
       }
     }
@@ -132,28 +144,36 @@ AFRAME.registerComponent("ui-surface", {
 
     if (route === "songs") {
       ctx.fillText("PLAYLIST", 18, 52);
-      state.songs.forEach((song, index) => {
-        const y = 80 + index * 28;
+      this.drawButton(18, 66, 220, 20, "SCROLL UP");
+      const visibleSongs = state.songs.slice(state.songScrollOffset, state.songScrollOffset + VISIBLE_SONG_ROWS);
+      visibleSongs.forEach((song, localIndex) => {
+        const index = state.songScrollOffset + localIndex;
+        const y = 112 + localIndex * 22;
         const active = index === state.currentSongIndex;
         ctx.fillStyle = active ? "rgba(161,191,95,0.22)" : "rgba(255,255,255,0.03)";
-        ctx.fillRect(18, y - 14, 220, 22);
+        ctx.fillRect(18, y - 14, 220, 18);
         ctx.fillStyle = active ? COLORS.uiAccent : COLORS.uiText;
-        ctx.fillText(song.title.slice(0, 24), 24, y);
+        ctx.fillText(song.title.slice(0, 22), 24, y);
+        ctx.fillStyle = "#8a8f72";
+        ctx.font = "10px monospace";
+        ctx.fillText((song.album || "Library").slice(0, 26), 24, y + 10);
+        ctx.font = "16px monospace";
       });
-      this.drawBack();
+      this.drawButton(18, 214, 220, 20, "SCROLL DOWN");
+      this.drawBack(238);
     }
 
     if (route === "files") {
       ctx.fillText("FILES / SYSTEM", 18, 52);
       this.drawButton(18, 90, 220, 32, "UPLOAD SONG");
       this.drawButton(18, 140, 220, 32, "ADVANCED");
-      this.drawBack();
+      this.drawBack(238);
     }
 
     if (route === "files/advanced") {
       ctx.fillText("ADVANCED", 18, 52);
       this.drawButton(18, 126, 220, 32, "UNKNOWN");
-      this.drawBack();
+      this.drawBack(238);
     }
 
     if (route === "files/advanced/unknown") {
@@ -166,12 +186,14 @@ AFRAME.registerComponent("ui-surface", {
         32,
         `VISUALIZER MODE: ${state.hiddenMode ? "HUMAN" : "OFF"}`
       );
-      this.drawBack();
+      this.drawBack(238);
     }
 
-    this.drawVisualizer(22, 198, 140, 34, analysis);
+    this.drawVisualizer(146, 194, 92, 38, analysis);
     ctx.fillStyle = COLORS.uiText;
-    ctx.fillText(state.isPlaying ? "PLAYING" : "IDLE", 172, 214);
+    ctx.font = "12px monospace";
+    ctx.fillText(state.isPlaying ? "PLAYING" : "IDLE", 148, 188);
+    ctx.font = "16px monospace";
     this.texture.needsUpdate = true;
   },
 
@@ -184,8 +206,8 @@ AFRAME.registerComponent("ui-surface", {
     this.ctx.fillText(label, x + 10, y + 22);
   },
 
-  drawBack() {
-    this.drawButton(18, 218, 220, 24, "BACK");
+  drawBack(y = 218) {
+    this.drawButton(18, y, 220, 14, "BACK");
   },
 
   drawVisualizer(x, y, w, h, analysis) {
