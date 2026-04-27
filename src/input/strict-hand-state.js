@@ -27,7 +27,7 @@ AFRAME.registerComponent("strict-hand-state", {
     this.touchTip.setAttribute("segments-width", 5);
     this.touchTip.setAttribute("segments-height", 5);
     this.touchTip.setAttribute("material", "color: #d8f0a8; emissive: #a3cf4a; emissiveIntensity: 0.45");
-    this.touchTip.setAttribute("position", "0 0 -0.14");
+    this.touchTip.setAttribute("position", "0 0 -0.155");
     this.touchTip.setAttribute("visible", "false");
     this.el.appendChild(this.touchTip);
 

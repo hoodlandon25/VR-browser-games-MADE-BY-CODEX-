@@ -5,7 +5,11 @@ function routeKey() {
   return state.uiRoute.join("/");
 }
 
-const VISIBLE_SONG_ROWS = 5;
+const SCREEN_WIDTH = 0.34;
+const SCREEN_HEIGHT = 0.24;
+const HALF_SCREEN_WIDTH = SCREEN_WIDTH / 2;
+const HALF_SCREEN_HEIGHT = SCREEN_HEIGHT / 2;
+const VISIBLE_SONG_ROWS = 4;
 
 AFRAME.registerComponent("ui-surface", {
   init() {
@@ -20,9 +24,9 @@ AFRAME.registerComponent("ui-surface", {
     this.texture.minFilter = THREE.NearestFilter;
 
     this.screen = document.createElement("a-plane");
-    this.screen.setAttribute("width", "0.28");
-    this.screen.setAttribute("height", "0.28");
-    this.screen.setAttribute("position", "0 0.02 0.031");
+    this.screen.setAttribute("width", String(SCREEN_WIDTH));
+    this.screen.setAttribute("height", String(SCREEN_HEIGHT));
+    this.screen.setAttribute("position", "0 0.024 0.031");
     this.screen.setAttribute("class", "ui-hit");
     this.screen.setAttribute("material", "shader: flat; transparent: true; opacity: 0.42; side: double");
     this.el.appendChild(this.screen);
@@ -85,40 +89,43 @@ AFRAME.registerComponent("ui-surface", {
     this.touchProbe.copy(worldPoint);
     this.screen.object3D.worldToLocal(this.touchProbe);
 
-    const halfWidth = 0.14;
-    const halfHeight = 0.14;
-    if (Math.abs(this.touchProbe.z) > 0.035) {
+    if (this.touchProbe.z < -0.004 || this.touchProbe.z > 0.014) {
       return null;
     }
-    if (this.touchProbe.x < -halfWidth || this.touchProbe.x > halfWidth || this.touchProbe.y < -halfHeight || this.touchProbe.y > halfHeight) {
+    if (
+      this.touchProbe.x < -HALF_SCREEN_WIDTH ||
+      this.touchProbe.x > HALF_SCREEN_WIDTH ||
+      this.touchProbe.y < -HALF_SCREEN_HEIGHT ||
+      this.touchProbe.y > HALF_SCREEN_HEIGHT
+    ) {
       return null;
     }
 
     return {
-      x: ((this.touchProbe.x + halfWidth) / (halfWidth * 2)) * this.canvas.width,
-      y: ((halfHeight - this.touchProbe.y) / (halfHeight * 2)) * this.canvas.height
+      x: ((this.touchProbe.x + HALF_SCREEN_WIDTH) / (HALF_SCREEN_WIDTH * 2)) * this.canvas.width,
+      y: ((HALF_SCREEN_HEIGHT - this.touchProbe.y) / (HALF_SCREEN_HEIGHT * 2)) * this.canvas.height
     };
   },
 
   activateAt(x, y) {
     const currentRoute = routeKey();
     if (currentRoute === "menu") {
-      if (y > 62 && y < 100) {
+      if (y > 72 && y < 118) {
         state.uiRoute = ["songs"];
-      } else if (y > 104 && y < 142) {
+      } else if (y > 128 && y < 174) {
         state.uiRoute = ["files"];
       }
     } else if (currentRoute === "songs") {
-      if (y > 66 && y < 90) {
+      if (y > 70 && y < 98) {
         state.songScrollOffset = Math.max(0, state.songScrollOffset - 1);
-      } else if (y > 214 && y < 238) {
+      } else if (y > 202 && y < 230) {
         state.songScrollOffset = Math.min(
           Math.max(0, state.songs.length - VISIBLE_SONG_ROWS),
           state.songScrollOffset + 1
         );
       } else {
-        const listStart = 100;
-        const rowHeight = 22;
+        const listStart = 112;
+        const rowHeight = 24;
         const localIndex = Math.floor((y - listStart) / rowHeight);
         const index = state.songScrollOffset + localIndex;
         if (localIndex >= 0 && localIndex < VISIBLE_SONG_ROWS && index < state.songs.length) {
@@ -128,21 +135,21 @@ AFRAME.registerComponent("ui-surface", {
         }
       }
     } else if (currentRoute === "files") {
-      if (y > 90 && y < 128) {
+      if (y > 88 && y < 134) {
         publish("ui:trigger-upload");
-      } else if (y > 140 && y < 178) {
+      } else if (y > 144 && y < 190) {
         state.uiRoute = ["files", "advanced"];
       } else if (y > 238) {
         state.uiRoute = ["menu"];
       }
     } else if (currentRoute === "files/advanced") {
-      if (y > 126 && y < 164) {
+      if (y > 136 && y < 184) {
         state.uiRoute = ["files", "advanced", "unknown"];
       } else if (y > 238) {
         state.uiRoute = ["menu"];
       }
     } else if (currentRoute === "files/advanced/unknown") {
-      if (y > 168 && y < 206) {
+      if (y > 164 && y < 212) {
         state.hiddenMode = !state.hiddenMode;
         publish("hidden-mode:toggled", state.hiddenMode);
       } else if (y > 238) {
@@ -189,71 +196,71 @@ AFRAME.registerComponent("ui-surface", {
 
     const route = routeKey();
     if (route === "menu") {
-      this.drawButton(18, 62, 220, 32, "SONGS");
-      this.drawButton(18, 104, 220, 32, "FILES / SYSTEM");
+      this.drawButton(18, 72, 220, 40, "SONGS");
+      this.drawButton(18, 126, 220, 40, "FILES / SYSTEM");
     }
 
     if (route === "songs") {
-      ctx.fillText("PLAYLIST", 18, 52);
-      this.drawButton(18, 66, 220, 20, "SCROLL UP");
+      ctx.fillText("PLAYLIST", 18, 58);
+      this.drawButton(18, 70, 220, 24, "SCROLL UP");
       const visibleSongs = state.songs.slice(state.songScrollOffset, state.songScrollOffset + VISIBLE_SONG_ROWS);
       visibleSongs.forEach((song, localIndex) => {
         const index = state.songScrollOffset + localIndex;
-        const y = 112 + localIndex * 22;
+        const y = 124 + localIndex * 24;
         const active = index === state.currentSongIndex;
         ctx.fillStyle = active ? "rgba(161,191,95,0.22)" : "rgba(255,255,255,0.03)";
-        ctx.fillRect(18, y - 14, 220, 18);
+        ctx.fillRect(18, y - 16, 220, 22);
         ctx.fillStyle = active ? COLORS.uiAccent : COLORS.uiText;
         ctx.fillText(song.title.slice(0, 22), 24, y);
         ctx.fillStyle = "#8a8f72";
         ctx.font = "10px monospace";
-        ctx.fillText((song.album || "Library").slice(0, 26), 24, y + 10);
+        ctx.fillText((song.album || "Library").slice(0, 26), 24, y + 11);
         ctx.font = "16px monospace";
       });
-      this.drawButton(18, 214, 220, 20, "SCROLL DOWN");
+      this.drawButton(18, 202, 220, 24, "SCROLL DOWN");
       this.drawBack(238);
     }
 
     if (route === "files") {
-      ctx.fillText("FILES / SYSTEM", 18, 52);
-      this.drawButton(18, 90, 220, 32, "UPLOAD SONG");
-      this.drawButton(18, 140, 220, 32, "ADVANCED");
+      ctx.fillText("FILES / SYSTEM", 18, 58);
+      this.drawButton(18, 88, 220, 40, "UPLOAD SONG");
+      this.drawButton(18, 142, 220, 40, "ADVANCED");
       this.drawBack(238);
     }
 
     if (route === "files/advanced") {
-      ctx.fillText("ADVANCED", 18, 52);
-      this.drawButton(18, 126, 220, 32, "UNKNOWN");
+      ctx.fillText("ADVANCED", 18, 58);
+      this.drawButton(18, 136, 220, 42, "UNKNOWN");
       this.drawBack(238);
     }
 
     if (route === "files/advanced/unknown") {
       ctx.fillStyle = "#c4c1a6";
-      ctx.fillText("UNKNOWN", 18, 52);
+      ctx.fillText("UNKNOWN", 18, 58);
       this.drawButton(
         18,
-        168,
+        164,
         220,
-        32,
+        42,
         `VISUALIZER MODE: ${state.hiddenMode ? "HUMAN" : "OFF"}`
       );
       this.drawBack(238);
     }
 
-    this.drawVisualizer(146, 194, 92, 38, analysis);
+    this.drawVisualizer(148, 188, 90, 32, analysis);
     this.drawTouchHint();
     ctx.fillStyle = COLORS.uiText;
     ctx.font = "12px monospace";
-    ctx.fillText(state.isPlaying ? "PLAYING" : "IDLE", 148, 188);
+    ctx.fillText(state.isPlaying ? "PLAYING" : "IDLE", 150, 180);
     if (!state.uiVisible) {
       ctx.fillStyle = "rgba(0, 0, 0, 0.58)";
-      ctx.fillRect(16, 98, 224, 54);
+      ctx.fillRect(16, 100, 224, 54);
       ctx.strokeStyle = "rgba(161,191,95,0.38)";
-      ctx.strokeRect(16, 98, 224, 54);
+      ctx.strokeRect(16, 100, 224, 54);
       ctx.fillStyle = COLORS.uiText;
-      ctx.fillText("GRAB PLAYER", 68, 121);
+      ctx.fillText("GRAB PLAYER", 68, 124);
       ctx.font = "12px monospace";
-      ctx.fillText("FIST HAND TO USE", 60, 139);
+      ctx.fillText("FIST HAND TO USE", 60, 142);
     }
     ctx.font = "16px monospace";
     this.texture.needsUpdate = true;
@@ -268,7 +275,7 @@ AFRAME.registerComponent("ui-surface", {
     this.ctx.strokeStyle = "rgba(161,191,95,0.55)";
     this.ctx.strokeRect(x, y, w, h);
     this.ctx.fillStyle = COLORS.uiText;
-    this.ctx.fillText(label, x + 10, y + 22);
+    this.ctx.fillText(label, x + 10, y + Math.floor(h * 0.65));
   },
 
   drawBack(y = 218) {
