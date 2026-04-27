@@ -76,6 +76,6 @@ AFRAME.registerComponent("left-stick-locomotion", {
 
     this.el.object3D.position.addScaledVector(this.move, this.data.speed * (dtMs / 1000));
     this.el.object3D.position.x = THREE.MathUtils.clamp(this.el.object3D.position.x, -0.9, 0.9);
-    this.el.object3D.position.z = THREE.MathUtils.clamp(this.el.object3D.position.z, -0.2, 8.8);
+    this.el.object3D.position.z = THREE.MathUtils.clamp(this.el.object3D.position.z, -3.2, 2.8);
   }
 });
