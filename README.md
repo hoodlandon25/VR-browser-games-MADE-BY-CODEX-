@@ -37,3 +37,15 @@ Strict rules enforced in code:
 ## Hidden mode path
 
 `Menu -> Files/System -> Advanced -> Unknown -> Visualizer Mode: Human`
+
+## Push helper
+
+To resume pushing the repo and print a simple `1%` to `100%` progress readout:
+
+```bash
+cd /home/hoodlandon25/VR-browser-games-MADE-BY-CODEX-
+chmod +x scripts/push_and_enable_pages.sh
+GITHUB_TOKEN=YOUR_TOKEN ./scripts/push_and_enable_pages.sh
+```
+
+If `GITHUB_TOKEN` is set, the script also attempts to enable GitHub Pages with the GitHub Actions build type.
