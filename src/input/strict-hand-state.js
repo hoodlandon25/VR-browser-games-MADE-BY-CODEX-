@@ -68,8 +68,8 @@ AFRAME.registerComponent("strict-hand-state", {
       this.syncState();
     };
 
-    ["gripdown", "abuttondown", "xbuttondown"].forEach((evt) => this.el.addEventListener(evt, this.onGripDown));
-    ["gripup", "abuttonup", "xbuttonup"].forEach((evt) => this.el.addEventListener(evt, this.onGripUp));
+    ["gripdown"].forEach((evt) => this.el.addEventListener(evt, this.onGripDown));
+    ["gripup"].forEach((evt) => this.el.addEventListener(evt, this.onGripUp));
     ["triggerdown"].forEach((evt) => this.el.addEventListener(evt, this.onTriggerDown));
     ["triggerup"].forEach((evt) => this.el.addEventListener(evt, this.onTriggerUp));
 
