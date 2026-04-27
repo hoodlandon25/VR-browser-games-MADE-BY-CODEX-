@@ -41,7 +41,7 @@ AFRAME.registerComponent("strict-hand-state", {
     this.ray.setAttribute("raycaster", "objects: .ui-hit; far: 0.8; showLine: false");
     this.ray.setAttribute("line", "color: #c4db6c; opacity: 0.75");
     this.ray.setAttribute("visible", "false");
-    this.ray.setAttribute("position", "0 0 -0.02");
+    this.ray.setAttribute("position", "0 0 -0.155");
     this.el.appendChild(this.ray);
 
     this.label.setAttribute("value", "");
@@ -90,6 +90,7 @@ AFRAME.registerComponent("strict-hand-state", {
 
     this.ray.setAttribute("visible", nextState === "point");
     this.ray.setAttribute("raycaster", "objects: .ui-hit; far: 0.8");
+    this.ray.setAttribute("position", nextState === "point" ? "0 0 -0.155" : "0 0 -0.02");
     this.grabber.setAttribute("material", `color: #a7ba68; opacity: ${nextState === "fist" ? 0.22 : 0.0}; transparent: true`);
     this.pointerCore.setAttribute("scale", nextState === "fist" ? "0.7 0.7 0.7" : nextState === "point" ? "0.5 0.5 2.2" : "1 1 1");
     this.pointerCore.setAttribute("position", nextState === "point" ? "0 0 -0.06" : "0 0 0");

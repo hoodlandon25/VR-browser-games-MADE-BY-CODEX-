@@ -153,13 +153,20 @@ function animate() {
       return;
     }
     const key = handState.data.hand;
-    const surface = mp3Entity.components["ui-surface"];
+    const intersections = handState.ray.components.raycaster?.intersections || [];
+    const activeHit = state.handStates[key] === "point" && intersections[0]?.object?.el?.classList?.contains("ui-hit")
+      ? intersections[0]
+      : null;
     const touchObject = handState.touchTip?.object3D;
-    const touchPoint = touchObject && state.handStates[key] === "point"
-      ? surface?.getTouchPoint(touchObject.getWorldPosition(new THREE.Vector3()))
+    const touchPoint = activeHit?.uv && touchObject
+      ? {
+          x: activeHit.uv.x * 256,
+          y: (1 - activeHit.uv.y) * 256,
+          distance: activeHit.point.distanceTo(touchObject.getWorldPosition(new THREE.Vector3()))
+        }
       : null;
 
-    if (!touchPoint) {
+    if (!touchPoint || touchPoint.distance > 0.06) {
       touchCooldowns.set(key, 0);
       return;
     }
