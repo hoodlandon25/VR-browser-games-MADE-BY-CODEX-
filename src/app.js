@@ -149,19 +149,18 @@ function registerSceneLifecycle() {
   });
 }
 
-function mp3HeldInLeftHand() {
-  return mp3Entity.components["mp3-player"]?.grabbedBy === "left";
+function mp3UiActive() {
+  return state.uiVisible && state.mp3HeldBy === "left";
 }
 
 function registerUiControllerInput() {
-  rightHand.addEventListener("thumbstickmoved", (event) => {
-    if (!mp3HeldInLeftHand()) {
+  const handleUiAxis = (yAxis) => {
+    if (!mp3UiActive()) {
       navReady = true;
       return;
     }
 
-    const y = event.detail?.y || 0;
-    if (Math.abs(y) < 0.6) {
+    if (Math.abs(yAxis) < 0.55) {
       navReady = true;
       return;
     }
@@ -170,18 +169,30 @@ function registerUiControllerInput() {
       return;
     }
 
-    publish("ui:move", { delta: y > 0 ? 1 : -1 });
+    publish("ui:move", { delta: yAxis > 0 ? 1 : -1 });
     navReady = false;
+  };
+
+  rightHand.addEventListener("thumbstickmoved", (event) => {
+    handleUiAxis(event.detail?.y || 0);
+  });
+
+  rightHand.addEventListener("axismove", (event) => {
+    const axis = event.detail?.axis;
+    if (!Array.isArray(axis) || axis.length < 2) {
+      return;
+    }
+    handleUiAxis(axis[1] || 0);
   });
 
   rightHand.addEventListener("abuttondown", () => {
-    if (mp3HeldInLeftHand()) {
+    if (mp3UiActive()) {
       publish("ui:confirm");
     }
   });
 
   rightHand.addEventListener("bbuttondown", () => {
-    if (mp3HeldInLeftHand()) {
+    if (mp3UiActive()) {
       publish("ui:back");
     }
   });
