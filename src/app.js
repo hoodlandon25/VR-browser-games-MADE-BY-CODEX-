@@ -20,7 +20,7 @@ const pointerTimers = new Map();
 AFRAME.registerComponent("mp3-player", {
   init() {
     this.grabbedBy = null;
-    this.returnAnchor = new THREE.Vector3(0.42, 1.12, -1.78);
+    this.returnAnchor = new THREE.Vector3(0.72, 1.08, -1.42);
     this.target = new THREE.Vector3();
     this.temp = new THREE.Vector3();
     this.screenOffset = new THREE.Vector3(0.18, -0.1, -0.42);
@@ -65,7 +65,7 @@ AFRAME.registerComponent("mp3-player", {
       }
       const grabberPos = grabberObject.getWorldPosition(new THREE.Vector3());
       const mp3Pos = this.el.object3D.getWorldPosition(new THREE.Vector3());
-      if (!this.grabbedBy && grabberPos.distanceTo(mp3Pos) < 0.26) {
+      if (!this.grabbedBy && grabberPos.distanceTo(mp3Pos) < 0.34) {
         this.grabbedBy = hand;
         this.syncUiVisibility();
       }
