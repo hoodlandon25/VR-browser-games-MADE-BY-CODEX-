@@ -17,6 +17,7 @@ const mp3Entity = document.getElementById("mp3-player");
 const rightHand = document.getElementById("right-hand");
 const audio = new AudioManager();
 let navReady = true;
+let navLastMoveAt = 0;
 
 AFRAME.registerComponent("mp3-player", {
   init() {
@@ -157,6 +158,7 @@ function registerUiControllerInput() {
   const handleUiAxis = (yAxis) => {
     if (!mp3UiActive()) {
       navReady = true;
+      navLastMoveAt = 0;
       return;
     }
 
@@ -169,7 +171,13 @@ function registerUiControllerInput() {
       return;
     }
 
+    const now = performance.now();
+    if (now - navLastMoveAt < 240) {
+      return;
+    }
+
     publish("ui:move", { delta: yAxis > 0 ? 1 : -1 });
+    navLastMoveAt = now;
     navReady = false;
   };
 

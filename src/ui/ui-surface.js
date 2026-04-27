@@ -394,13 +394,45 @@ AFRAME.registerComponent("ui-surface", {
   },
 
   drawVisualizer(x, y, w, h, analysis) {
-    this.ctx.fillStyle = "rgba(0,0,0,0.35)";
+    this.ctx.fillStyle = "rgba(0,0,0,0.42)";
     this.ctx.fillRect(x, y, w, h);
-    for (let i = 0; i < 12; i += 1) {
-      const value = analysis.amplitude * 0.35 + (i % 3 === 0 ? analysis.bass : i % 2 === 0 ? analysis.mids : analysis.treble);
-      const barHeight = Math.max(2, value * h);
+    if (!state.isPlaying) {
+      this.ctx.fillStyle = "rgba(214, 229, 180, 0.42)";
+      this.ctx.font = "10px monospace";
+      this.ctx.fillText("IDLE", x + 26, y + 19);
+      this.ctx.font = "16px monospace";
+      this.ctx.strokeStyle = "rgba(255,255,255,0.12)";
+      this.ctx.strokeRect(x, y, w, h);
+      return;
+    }
+
+    const bands = [
+      analysis.bass,
+      analysis.bass * 0.9 + analysis.amplitude * 0.35,
+      analysis.mids,
+      analysis.mids * 0.88 + analysis.amplitude * 0.4,
+      analysis.treble,
+      analysis.treble * 0.82 + analysis.amplitude * 0.45
+    ];
+    const barWidth = 11;
+    const gap = 3;
+    for (let i = 0; i < bands.length; i += 1) {
+      const power = THREE.MathUtils.clamp(bands[i] * 1.75, 0, 1);
+      const barHeight = Math.max(4, power * (h - 4));
       this.ctx.fillStyle = state.hiddenMode ? "#d77975" : "#a1bf5f";
-      this.ctx.fillRect(x + i * 11, y + h - barHeight, 8, barHeight);
+      this.ctx.fillRect(x + 6 + i * (barWidth + gap), y + h - barHeight - 2, barWidth, barHeight);
+    }
+
+    const waveY = y + h - 4 - analysis.amplitude * 10;
+    this.ctx.strokeStyle = state.hiddenMode ? "rgba(247,140,140,0.8)" : "rgba(228, 241, 171, 0.82)";
+    this.ctx.beginPath();
+    this.ctx.moveTo(x + 4, waveY);
+    this.ctx.lineTo(x + w - 4, y + h - 4 - analysis.mids * 12);
+    this.ctx.stroke();
+
+    if (analysis.beat) {
+      this.ctx.fillStyle = state.hiddenMode ? "rgba(215, 121, 117, 0.18)" : "rgba(161,191,95,0.18)";
+      this.ctx.fillRect(x + 1, y + 1, w - 2, h - 2);
     }
     this.ctx.strokeStyle = "rgba(255,255,255,0.12)";
     this.ctx.strokeRect(x, y, w, h);
