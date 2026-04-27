@@ -1,4 +1,5 @@
 import { AudioManager } from "./audio/audio-manager.js";
+import "./input/left-stick-locomotion.js";
 import "./input/vr-hand-controls.js";
 import "./input/strict-hand-state.js";
 import "./npc/npc-controller.js";
@@ -19,10 +20,12 @@ const pointerTimers = new Map();
 AFRAME.registerComponent("mp3-player", {
   init() {
     this.grabbedBy = null;
-    this.returnAnchor = new THREE.Vector3(0.28, 1.02, -3.45);
+    this.returnAnchor = new THREE.Vector3(0.42, 1.12, -3.62);
     this.target = new THREE.Vector3();
     this.temp = new THREE.Vector3();
-    this.screenOffset = new THREE.Vector3(0, -0.08, -0.46);
+    this.screenOffset = new THREE.Vector3(0.18, -0.1, -0.42);
+    this.returnRotation = new THREE.Euler(0.18, -0.32, 0);
+    this.headTarget = new THREE.Vector3();
 
     const body = new THREE.Mesh(
       new THREE.BoxGeometry(0.18, 0.28, 0.06),
@@ -56,9 +59,13 @@ AFRAME.registerComponent("mp3-player", {
         return;
       }
 
-      const grabberPos = grabber.getWorldPosition(new THREE.Vector3());
+      const grabberObject = grabber?.object3D;
+      if (!grabberObject) {
+        return;
+      }
+      const grabberPos = grabberObject.getWorldPosition(new THREE.Vector3());
       const mp3Pos = this.el.object3D.getWorldPosition(new THREE.Vector3());
-      if (!this.grabbedBy && grabberPos.distanceTo(mp3Pos) < 0.2) {
+      if (!this.grabbedBy && grabberPos.distanceTo(mp3Pos) < 0.26) {
         this.grabbedBy = hand;
         this.syncUiVisibility();
       }
@@ -77,11 +84,13 @@ AFRAME.registerComponent("mp3-player", {
       this.target.copy(this.screenOffset);
       head.localToWorld(this.target);
       this.el.object3D.position.lerp(this.target, 1 - Math.pow(0.0008, dt));
-      this.el.object3D.lookAt(head.getWorldPosition(this.temp));
+      head.getWorldPosition(this.headTarget);
+      this.el.object3D.lookAt(this.headTarget);
     } else {
       this.el.object3D.position.lerp(this.returnAnchor, 1 - Math.pow(0.008, dt));
-      this.el.object3D.rotation.x = THREE.MathUtils.lerp(this.el.object3D.rotation.x, 0, 0.06);
-      this.el.object3D.rotation.y = THREE.MathUtils.lerp(this.el.object3D.rotation.y, 0.2, 0.06);
+      this.el.object3D.rotation.x = THREE.MathUtils.lerp(this.el.object3D.rotation.x, this.returnRotation.x, 0.06);
+      this.el.object3D.rotation.y = THREE.MathUtils.lerp(this.el.object3D.rotation.y, this.returnRotation.y, 0.06);
+      this.el.object3D.rotation.z = THREE.MathUtils.lerp(this.el.object3D.rotation.z, this.returnRotation.z, 0.06);
     }
   }
 });

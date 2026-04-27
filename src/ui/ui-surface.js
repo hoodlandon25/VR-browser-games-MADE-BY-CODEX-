@@ -20,10 +20,9 @@ AFRAME.registerComponent("ui-surface", {
     this.screen = document.createElement("a-plane");
     this.screen.setAttribute("width", "0.28");
     this.screen.setAttribute("height", "0.28");
-    this.screen.setAttribute("position", "0 0.03 0.038");
+    this.screen.setAttribute("position", "0 0.02 0.031");
     this.screen.setAttribute("class", "ui-hit");
-    this.screen.setAttribute("material", "shader: flat; transparent: false");
-    this.screen.object3D.visible = false;
+    this.screen.setAttribute("material", "shader: flat; transparent: true; opacity: 0.42; side: double");
     this.el.appendChild(this.screen);
 
     this.screen.addEventListener("loaded", () => {
@@ -40,8 +39,8 @@ AFRAME.registerComponent("ui-surface", {
   },
 
   setVisible(visible) {
-    this.screen.object3D.visible = visible;
     state.uiVisible = visible;
+    this.screen.setAttribute("material", `shader: flat; transparent: true; opacity: ${visible ? 1 : 0.42}; side: double`);
     this.draw();
   },
 
@@ -193,6 +192,16 @@ AFRAME.registerComponent("ui-surface", {
     ctx.fillStyle = COLORS.uiText;
     ctx.font = "12px monospace";
     ctx.fillText(state.isPlaying ? "PLAYING" : "IDLE", 148, 188);
+    if (!state.uiVisible) {
+      ctx.fillStyle = "rgba(0, 0, 0, 0.58)";
+      ctx.fillRect(16, 98, 224, 54);
+      ctx.strokeStyle = "rgba(161,191,95,0.38)";
+      ctx.strokeRect(16, 98, 224, 54);
+      ctx.fillStyle = COLORS.uiText;
+      ctx.fillText("GRAB PLAYER", 68, 121);
+      ctx.font = "12px monospace";
+      ctx.fillText("FIST HAND TO USE", 60, 139);
+    }
     ctx.font = "16px monospace";
     this.texture.needsUpdate = true;
   },

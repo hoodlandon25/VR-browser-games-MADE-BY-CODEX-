@@ -13,6 +13,7 @@ Open `http://<your-machine>:8080` in Quest Browser, then use the on-page `Enter 
 
 ## Controls
 
+- Left joystick: move through the hallway
 - Open hand: idle only
 - Grip only: pointing mode for UI
 - Grip + Trigger: closed fist for grabbing
