@@ -149,13 +149,13 @@ function registerSceneLifecycle() {
   });
 }
 
-function mp3HeldInRightHand() {
-  return mp3Entity.components["mp3-player"]?.grabbedBy === "right";
+function mp3HeldInLeftHand() {
+  return mp3Entity.components["mp3-player"]?.grabbedBy === "left";
 }
 
 function registerUiControllerInput() {
   rightHand.addEventListener("thumbstickmoved", (event) => {
-    if (!mp3HeldInRightHand()) {
+    if (!mp3HeldInLeftHand()) {
       navReady = true;
       return;
     }
@@ -175,13 +175,13 @@ function registerUiControllerInput() {
   });
 
   rightHand.addEventListener("abuttondown", () => {
-    if (mp3HeldInRightHand()) {
+    if (mp3HeldInLeftHand()) {
       publish("ui:confirm");
     }
   });
 
   rightHand.addEventListener("bbuttondown", () => {
-    if (mp3HeldInRightHand()) {
+    if (mp3HeldInLeftHand()) {
       publish("ui:back");
     }
   });

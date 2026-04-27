@@ -414,7 +414,7 @@ AFRAME.registerComponent("ui-surface", {
     this.ctx.fillRect(18, 42, 154, 14);
     this.ctx.fillStyle = "#d6e5b4";
     this.ctx.font = "10px monospace";
-    this.ctx.fillText("R STICK / A SELECT / B BACK", 22, 52);
+    this.ctx.fillText("HOLD LEFT / R STICK / A / B", 22, 52);
     this.ctx.font = "16px monospace";
   }
 });

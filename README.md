@@ -21,7 +21,7 @@ Open `http://<your-machine>:8080` in Quest Browser, then use the on-page `Enter 
 Strict rules enforced in code:
 
 - MP3 can only be grabbed while the hand state is `fist`
-- UI reacts only to `point` interactions
+- Hold the MP3 in the left hand, then use the right stick / `A` / `B` for the UI
 - No desktop or mobile gameplay controls are provided
 
 ## File structure
