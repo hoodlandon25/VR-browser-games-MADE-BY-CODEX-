@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Human Visualizer Hall</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aframe-extras@7.5.4/dist/aframe-extras.min.js"></script>
+</head>
+<body>
+  <div id="boot-overlay" class="overlay">
+    <div class="panel">
+      <h1>HUMAN VISUALIZER</h1>
+      <p>Quest Browser VR prototype. Desktop and mobile controls are intentionally disabled.</p>
+      <button id="enter-vr">Enter VR</button>
+      <label class="upload-row">
+        <span>Load MP3</span>
+        <input id="song-upload" type="file" accept=".mp3,audio/mpeg">
+      </label>
+      <p id="status-copy">Waiting for a headset session.</p>
+      <p class="tiny">Grip = point. Grip + Trigger = fist grab. The player only responds in VR.</p>
+    </div>
+  </div>
+
+  <a-scene
+    background="color: #060704"
+    renderer="colorManagement: true; physicallyCorrectLights: false; sortObjects: true"
+    vr-mode-ui="enabled: false"
+    device-orientation-permission-ui="enabled: false"
+    webxr="requiredFeatures: local-floor; optionalFeatures: bounded-floor, hand-tracking, layers"
+    psx-post
+  >
+    <a-assets timeout="10000"></a-assets>
+
+    <a-entity id="world-root" world-builder></a-entity>
+
+    <a-entity id="player-rig" position="0 0 2.4">
+      <a-entity id="head" camera position="0 1.6 0" look-controls="enabled: false"></a-entity>
+
+      <a-entity
+        id="left-hand"
+        position="-0.24 1.35 -0.28"
+        vr-hand-controls="hand: left"
+        strict-hand-state="hand: left"
+      ></a-entity>
+
+      <a-entity
+        id="right-hand"
+        position="0.24 1.35 -0.28"
+        vr-hand-controls="hand: right"
+        strict-hand-state="hand: right"
+      ></a-entity>
+    </a-entity>
+
+    <a-entity
+      id="npc"
+      position="0 0 -3.8"
+      npc-controller
+    ></a-entity>
+
+    <a-entity
+      id="mp3-player"
+      position="0.28 1.02 -3.45"
+      mp3-player
+      ui-surface
+    ></a-entity>
+  </a-scene>
+
+  <script type="module" src="./src/app.js"></script>
+</body>
+</html>
