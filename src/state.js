@@ -12,6 +12,7 @@ export const state = {
   uiSelection: 0,
   uiRoute: ["menu"],
   uiVisible: false,
+  mp3HeldBy: null,
   hiddenMode: false,
   isPlaying: false,
   analysis: {

@@ -77,7 +77,13 @@ AFRAME.registerComponent("strict-hand-state", {
   },
 
   syncState() {
-    const nextState = this.gripDown && this.triggerDown ? "fist" : this.gripDown ? "point" : "open";
+    const nextState = state.mp3HeldBy === this.data.hand
+      ? "fist"
+      : this.gripDown && this.triggerDown
+        ? "fist"
+        : this.gripDown
+          ? "point"
+          : "open";
     state.handStates[this.data.hand] = nextState;
     publish("hand:state", {
       hand: this.data.hand,

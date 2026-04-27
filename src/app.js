@@ -55,7 +55,9 @@ AFRAME.registerComponent("mp3-player", {
       if (handState !== "fist") {
         if (this.grabbedBy === hand) {
           this.grabbedBy = null;
+          state.mp3HeldBy = null;
           this.syncUiVisibility();
+          document.getElementById(`${hand}-hand`)?.components["strict-hand-state"]?.syncState();
         }
         return;
       }
@@ -68,7 +70,9 @@ AFRAME.registerComponent("mp3-player", {
       const mp3Pos = this.el.object3D.getWorldPosition(new THREE.Vector3());
       if (!this.grabbedBy && grabberPos.distanceTo(mp3Pos) < 0.34) {
         this.grabbedBy = hand;
+        state.mp3HeldBy = hand;
         this.syncUiVisibility();
+        document.getElementById(`${hand}-hand`)?.components["strict-hand-state"]?.syncState();
       }
     });
   },
